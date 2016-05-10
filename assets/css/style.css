@@ -1,0 +1,29 @@
+#ts-sidebar-1,#ts-sidebar-2,#ts-sidebar-3,#ts-sidebar-4{
+	min-height: 100px;
+}
+.ts-footer{
+	background: #8285E0;
+	min-height: 100px;
+	margin-top:50px;
+}
+.ts-footer-1{
+	border:2px solid #fff;
+	border-radius: 4px;
+	margin:10px;
+}
+.ts-container{
+	height: 160%;
+}
+.ts-label{
+	text-align:right;
+}
+.ts-sidebar-label{
+	background:#F8F8F8;
+	color:#777;
+}
+.ts-contacts{
+	padding-top:10px;
+}
+#no-border{
+	border: 0px solid;
+}
