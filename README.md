@@ -1,0 +1,2 @@
+# sftstr
+inisial software
