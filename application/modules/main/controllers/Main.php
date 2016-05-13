@@ -28,7 +28,7 @@ class Main extends MX_Controller {
 		$this->load->view('paket_website',$data);
 	}
 
-	function paket_komputer(){
+	function paket_software(){
 		redirect('Software');
 	}
 

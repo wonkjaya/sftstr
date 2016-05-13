@@ -61,13 +61,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
+if($_SERVER['HTTP_HOST'] == 'server2-malangsoftware.com'){
+	$username='softwarestore';
+	$password='root';
+	$dbs='dev_softwarestore';
+}else{
+	$username='rohmanah_rwiWP1';
+	$password='7@)90G9SP9';
+	$dbs='rohmanah_AdMTrsi';
+}
 
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'rohmanah_rwiWP1',
-	'password' => '7@)90G9SP9',
-	'database' => 'rohmanah_AdMTrsi',
+	'username' => $username,
+	'password' => $password,
+	'database' => $dbs,
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home - Malangsoftware.com</title>
+<title><?=(isset($title))?$title:'Home';?> - Malangsoftware.com</title>
 <meta name="description" content="Jasa pembuatan software(desktop atau website), pemasangan komputer kantor dan jaringan komputer (warnet,kantor,dll)">
 <meta name="keywords" content="software-malang,pembuatan-website,pembuatan-software,pemasangan-komputer,pemasangan-jaringan">
 <meta name="author" content="malangsoftware.com">
@@ -53,7 +53,7 @@
 								?>
 							</ul>
 						</nav>
-						<h1><a href="index.html"><span>Malang</span>Software</a></h1>
+						<h1><a href="<?=site_url()?>"><span>Malang</span>Software</a></h1>
 					</div>
 				</div>
 			</div>
