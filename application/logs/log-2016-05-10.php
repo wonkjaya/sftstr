@@ -517,3 +517,339 @@ INFO - 2016-05-10 11:05:18 --> Database Driver Class Initialized
 INFO - 2016-05-10 11:05:18 --> Session: Class initialized using 'files' driver.
 INFO - 2016-05-10 11:05:18 --> Controller Class Initialized
 ERROR - 2016-05-10 11:05:18 --> 404 Page Not Found: ../modules/Main/controllers/Main/paket_software
+INFO - 2016-05-10 11:30:38 --> Config Class Initialized
+INFO - 2016-05-10 11:30:38 --> Hooks Class Initialized
+DEBUG - 2016-05-10 11:30:38 --> UTF-8 Support Enabled
+INFO - 2016-05-10 11:30:38 --> Utf8 Class Initialized
+INFO - 2016-05-10 11:30:38 --> URI Class Initialized
+DEBUG - 2016-05-10 11:30:38 --> No URI present. Default controller set.
+INFO - 2016-05-10 11:30:38 --> Router Class Initialized
+INFO - 2016-05-10 11:30:38 --> Output Class Initialized
+INFO - 2016-05-10 11:30:38 --> Security Class Initialized
+DEBUG - 2016-05-10 11:30:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 11:30:38 --> Input Class Initialized
+INFO - 2016-05-10 11:30:38 --> Language Class Initialized
+INFO - 2016-05-10 11:30:38 --> Language Class Initialized
+INFO - 2016-05-10 11:30:38 --> Config Class Initialized
+INFO - 2016-05-10 11:30:38 --> Loader Class Initialized
+INFO - 2016-05-10 11:30:38 --> Helper loaded: url_helper
+INFO - 2016-05-10 11:30:38 --> Helper loaded: html_helper
+INFO - 2016-05-10 11:30:38 --> Database Driver Class Initialized
+INFO - 2016-05-10 11:30:38 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 11:30:38 --> Controller Class Initialized
+DEBUG - 2016-05-10 11:30:38 --> Main MX_Controller Initialized
+INFO - 2016-05-10 11:30:38 --> Model Class Initialized
+DEBUG - 2016-05-10 11:30:38 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 11:30:38 --> Model Class Initialized
+DEBUG - 2016-05-10 11:30:38 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/views/index.php
+INFO - 2016-05-10 11:30:38 --> Final output sent to browser
+DEBUG - 2016-05-10 11:30:38 --> Total execution time: 0.0317
+INFO - 2016-05-10 11:30:52 --> Config Class Initialized
+INFO - 2016-05-10 11:30:52 --> Hooks Class Initialized
+DEBUG - 2016-05-10 11:30:52 --> UTF-8 Support Enabled
+INFO - 2016-05-10 11:30:52 --> Utf8 Class Initialized
+INFO - 2016-05-10 11:30:52 --> URI Class Initialized
+INFO - 2016-05-10 11:30:52 --> Router Class Initialized
+INFO - 2016-05-10 11:30:52 --> Output Class Initialized
+INFO - 2016-05-10 11:30:52 --> Security Class Initialized
+DEBUG - 2016-05-10 11:30:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 11:30:52 --> Input Class Initialized
+INFO - 2016-05-10 11:30:52 --> Language Class Initialized
+INFO - 2016-05-10 11:30:52 --> Language Class Initialized
+INFO - 2016-05-10 11:30:52 --> Config Class Initialized
+INFO - 2016-05-10 11:30:52 --> Loader Class Initialized
+INFO - 2016-05-10 11:30:52 --> Helper loaded: url_helper
+INFO - 2016-05-10 11:30:52 --> Helper loaded: html_helper
+INFO - 2016-05-10 11:30:52 --> Database Driver Class Initialized
+INFO - 2016-05-10 11:30:52 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 11:30:52 --> Controller Class Initialized
+DEBUG - 2016-05-10 11:30:52 --> Main MX_Controller Initialized
+INFO - 2016-05-10 11:30:52 --> Model Class Initialized
+DEBUG - 2016-05-10 11:30:52 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 11:30:52 --> Model Class Initialized
+DEBUG - 2016-05-10 11:30:52 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/views/paket_website.php
+INFO - 2016-05-10 11:30:52 --> Final output sent to browser
+DEBUG - 2016-05-10 11:30:52 --> Total execution time: 0.0197
+INFO - 2016-05-10 11:31:11 --> Config Class Initialized
+INFO - 2016-05-10 11:31:11 --> Hooks Class Initialized
+DEBUG - 2016-05-10 11:31:11 --> UTF-8 Support Enabled
+INFO - 2016-05-10 11:31:11 --> Utf8 Class Initialized
+INFO - 2016-05-10 11:31:11 --> URI Class Initialized
+INFO - 2016-05-10 11:31:11 --> Router Class Initialized
+INFO - 2016-05-10 11:31:11 --> Output Class Initialized
+INFO - 2016-05-10 11:31:11 --> Security Class Initialized
+DEBUG - 2016-05-10 11:31:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 11:31:11 --> Input Class Initialized
+INFO - 2016-05-10 11:31:11 --> Language Class Initialized
+INFO - 2016-05-10 11:31:11 --> Language Class Initialized
+INFO - 2016-05-10 11:31:11 --> Config Class Initialized
+INFO - 2016-05-10 11:31:11 --> Loader Class Initialized
+INFO - 2016-05-10 11:31:11 --> Helper loaded: url_helper
+INFO - 2016-05-10 11:31:11 --> Helper loaded: html_helper
+INFO - 2016-05-10 11:31:11 --> Database Driver Class Initialized
+INFO - 2016-05-10 11:31:11 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 11:31:11 --> Controller Class Initialized
+DEBUG - 2016-05-10 11:31:11 --> Main MX_Controller Initialized
+INFO - 2016-05-10 11:31:11 --> Model Class Initialized
+DEBUG - 2016-05-10 11:31:11 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 11:31:11 --> Model Class Initialized
+INFO - 2016-05-10 11:31:13 --> Final output sent to browser
+DEBUG - 2016-05-10 11:31:13 --> Total execution time: 1.5869
+INFO - 2016-05-10 11:31:28 --> Config Class Initialized
+INFO - 2016-05-10 11:31:28 --> Hooks Class Initialized
+DEBUG - 2016-05-10 11:31:28 --> UTF-8 Support Enabled
+INFO - 2016-05-10 11:31:28 --> Utf8 Class Initialized
+INFO - 2016-05-10 11:31:28 --> URI Class Initialized
+INFO - 2016-05-10 11:31:28 --> Router Class Initialized
+INFO - 2016-05-10 11:31:28 --> Output Class Initialized
+INFO - 2016-05-10 11:31:28 --> Security Class Initialized
+DEBUG - 2016-05-10 11:31:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 11:31:28 --> Input Class Initialized
+INFO - 2016-05-10 11:31:28 --> Language Class Initialized
+INFO - 2016-05-10 11:31:28 --> Language Class Initialized
+INFO - 2016-05-10 11:31:28 --> Config Class Initialized
+INFO - 2016-05-10 11:31:28 --> Loader Class Initialized
+INFO - 2016-05-10 11:31:28 --> Helper loaded: url_helper
+INFO - 2016-05-10 11:31:28 --> Helper loaded: html_helper
+INFO - 2016-05-10 11:31:28 --> Database Driver Class Initialized
+INFO - 2016-05-10 11:31:28 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 11:31:28 --> Controller Class Initialized
+DEBUG - 2016-05-10 11:31:28 --> Main MX_Controller Initialized
+INFO - 2016-05-10 11:31:28 --> Model Class Initialized
+DEBUG - 2016-05-10 11:31:28 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 11:31:28 --> Model Class Initialized
+INFO - 2016-05-10 11:31:31 --> Final output sent to browser
+DEBUG - 2016-05-10 11:31:31 --> Total execution time: 3.0023
+INFO - 2016-05-10 16:55:51 --> Config Class Initialized
+INFO - 2016-05-10 16:55:51 --> Hooks Class Initialized
+DEBUG - 2016-05-10 16:55:51 --> UTF-8 Support Enabled
+INFO - 2016-05-10 16:55:51 --> Utf8 Class Initialized
+INFO - 2016-05-10 16:55:51 --> URI Class Initialized
+DEBUG - 2016-05-10 16:55:51 --> No URI present. Default controller set.
+INFO - 2016-05-10 16:55:51 --> Router Class Initialized
+INFO - 2016-05-10 16:55:51 --> Output Class Initialized
+INFO - 2016-05-10 16:55:51 --> Security Class Initialized
+DEBUG - 2016-05-10 16:55:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 16:55:51 --> Input Class Initialized
+INFO - 2016-05-10 16:55:51 --> Language Class Initialized
+INFO - 2016-05-10 16:55:51 --> Language Class Initialized
+INFO - 2016-05-10 16:55:51 --> Config Class Initialized
+INFO - 2016-05-10 16:55:51 --> Loader Class Initialized
+INFO - 2016-05-10 16:55:51 --> Helper loaded: url_helper
+INFO - 2016-05-10 16:55:51 --> Helper loaded: html_helper
+INFO - 2016-05-10 16:55:51 --> Database Driver Class Initialized
+INFO - 2016-05-10 16:55:51 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 16:55:51 --> Controller Class Initialized
+DEBUG - 2016-05-10 16:55:51 --> Main MX_Controller Initialized
+INFO - 2016-05-10 16:55:51 --> Model Class Initialized
+DEBUG - 2016-05-10 16:55:51 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 16:55:51 --> Model Class Initialized
+DEBUG - 2016-05-10 16:55:51 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/views/index.php
+INFO - 2016-05-10 16:55:51 --> Final output sent to browser
+DEBUG - 2016-05-10 16:55:51 --> Total execution time: 0.0465
+INFO - 2016-05-10 20:32:48 --> Config Class Initialized
+INFO - 2016-05-10 20:32:48 --> Hooks Class Initialized
+DEBUG - 2016-05-10 20:32:48 --> UTF-8 Support Enabled
+INFO - 2016-05-10 20:32:48 --> Utf8 Class Initialized
+INFO - 2016-05-10 20:32:48 --> URI Class Initialized
+DEBUG - 2016-05-10 20:32:48 --> No URI present. Default controller set.
+INFO - 2016-05-10 20:32:48 --> Router Class Initialized
+INFO - 2016-05-10 20:32:48 --> Output Class Initialized
+INFO - 2016-05-10 20:32:48 --> Security Class Initialized
+DEBUG - 2016-05-10 20:32:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 20:32:48 --> Input Class Initialized
+INFO - 2016-05-10 20:32:48 --> Language Class Initialized
+INFO - 2016-05-10 20:32:48 --> Language Class Initialized
+INFO - 2016-05-10 20:32:48 --> Config Class Initialized
+INFO - 2016-05-10 20:32:48 --> Loader Class Initialized
+INFO - 2016-05-10 20:32:48 --> Helper loaded: url_helper
+INFO - 2016-05-10 20:32:48 --> Helper loaded: html_helper
+INFO - 2016-05-10 20:32:48 --> Database Driver Class Initialized
+INFO - 2016-05-10 20:32:48 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 20:32:48 --> Controller Class Initialized
+DEBUG - 2016-05-10 20:32:48 --> Main MX_Controller Initialized
+INFO - 2016-05-10 20:32:48 --> Model Class Initialized
+DEBUG - 2016-05-10 20:32:48 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 20:32:48 --> Model Class Initialized
+DEBUG - 2016-05-10 20:32:48 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/views/index.php
+INFO - 2016-05-10 20:32:48 --> Final output sent to browser
+DEBUG - 2016-05-10 20:32:48 --> Total execution time: 0.1029
+INFO - 2016-05-10 20:37:46 --> Config Class Initialized
+INFO - 2016-05-10 20:37:46 --> Hooks Class Initialized
+DEBUG - 2016-05-10 20:37:46 --> UTF-8 Support Enabled
+INFO - 2016-05-10 20:37:46 --> Utf8 Class Initialized
+INFO - 2016-05-10 20:37:46 --> URI Class Initialized
+DEBUG - 2016-05-10 20:37:46 --> No URI present. Default controller set.
+INFO - 2016-05-10 20:37:46 --> Router Class Initialized
+INFO - 2016-05-10 20:37:46 --> Output Class Initialized
+INFO - 2016-05-10 20:37:46 --> Security Class Initialized
+DEBUG - 2016-05-10 20:37:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 20:37:46 --> Input Class Initialized
+INFO - 2016-05-10 20:37:46 --> Language Class Initialized
+INFO - 2016-05-10 20:37:46 --> Language Class Initialized
+INFO - 2016-05-10 20:37:46 --> Config Class Initialized
+INFO - 2016-05-10 20:37:46 --> Loader Class Initialized
+INFO - 2016-05-10 20:37:46 --> Helper loaded: url_helper
+INFO - 2016-05-10 20:37:46 --> Helper loaded: html_helper
+INFO - 2016-05-10 20:37:46 --> Database Driver Class Initialized
+INFO - 2016-05-10 20:37:46 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 20:37:46 --> Controller Class Initialized
+DEBUG - 2016-05-10 20:37:46 --> Main MX_Controller Initialized
+INFO - 2016-05-10 20:37:46 --> Model Class Initialized
+DEBUG - 2016-05-10 20:37:46 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 20:37:46 --> Model Class Initialized
+DEBUG - 2016-05-10 20:37:46 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/views/index.php
+INFO - 2016-05-10 20:37:46 --> Final output sent to browser
+DEBUG - 2016-05-10 20:37:46 --> Total execution time: 0.0303
+INFO - 2016-05-10 22:17:48 --> Config Class Initialized
+INFO - 2016-05-10 22:17:48 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:17:48 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:17:48 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:17:48 --> URI Class Initialized
+INFO - 2016-05-10 22:17:48 --> Router Class Initialized
+INFO - 2016-05-10 22:17:48 --> Output Class Initialized
+INFO - 2016-05-10 22:17:48 --> Security Class Initialized
+DEBUG - 2016-05-10 22:17:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:17:48 --> Input Class Initialized
+INFO - 2016-05-10 22:17:48 --> Language Class Initialized
+INFO - 2016-05-10 22:17:48 --> Language Class Initialized
+INFO - 2016-05-10 22:17:48 --> Config Class Initialized
+INFO - 2016-05-10 22:17:48 --> Loader Class Initialized
+INFO - 2016-05-10 22:17:48 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:17:48 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:17:48 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:17:48 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:17:48 --> Controller Class Initialized
+ERROR - 2016-05-10 22:17:48 --> 404 Page Not Found: ../modules/Main/controllers/Main/paket_jarigan
+INFO - 2016-05-10 22:23:07 --> Config Class Initialized
+INFO - 2016-05-10 22:23:07 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:23:07 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:23:07 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:23:07 --> URI Class Initialized
+INFO - 2016-05-10 22:23:07 --> Router Class Initialized
+INFO - 2016-05-10 22:23:07 --> Output Class Initialized
+INFO - 2016-05-10 22:23:07 --> Security Class Initialized
+DEBUG - 2016-05-10 22:23:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:23:07 --> Input Class Initialized
+INFO - 2016-05-10 22:23:07 --> Language Class Initialized
+INFO - 2016-05-10 22:23:07 --> Language Class Initialized
+INFO - 2016-05-10 22:23:07 --> Config Class Initialized
+INFO - 2016-05-10 22:23:07 --> Loader Class Initialized
+INFO - 2016-05-10 22:23:07 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:23:07 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:23:07 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:23:07 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:23:07 --> Controller Class Initialized
+ERROR - 2016-05-10 22:23:07 --> 404 Page Not Found: ../modules/Main/controllers/Main/paket_software
+INFO - 2016-05-10 22:27:17 --> Config Class Initialized
+INFO - 2016-05-10 22:27:17 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:27:17 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:27:17 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:27:17 --> URI Class Initialized
+INFO - 2016-05-10 22:27:17 --> Router Class Initialized
+INFO - 2016-05-10 22:27:17 --> Output Class Initialized
+INFO - 2016-05-10 22:27:17 --> Security Class Initialized
+DEBUG - 2016-05-10 22:27:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:27:17 --> Input Class Initialized
+INFO - 2016-05-10 22:27:17 --> Language Class Initialized
+INFO - 2016-05-10 22:27:17 --> Language Class Initialized
+INFO - 2016-05-10 22:27:17 --> Config Class Initialized
+INFO - 2016-05-10 22:27:17 --> Loader Class Initialized
+INFO - 2016-05-10 22:27:17 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:27:17 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:27:17 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:27:17 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:27:17 --> Controller Class Initialized
+DEBUG - 2016-05-10 22:27:17 --> Main MX_Controller Initialized
+INFO - 2016-05-10 22:27:17 --> Model Class Initialized
+DEBUG - 2016-05-10 22:27:17 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 22:27:17 --> Model Class Initialized
+INFO - 2016-05-10 22:28:33 --> Config Class Initialized
+INFO - 2016-05-10 22:28:33 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:28:33 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:28:33 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:28:33 --> URI Class Initialized
+INFO - 2016-05-10 22:28:33 --> Router Class Initialized
+INFO - 2016-05-10 22:28:33 --> Output Class Initialized
+INFO - 2016-05-10 22:28:33 --> Security Class Initialized
+DEBUG - 2016-05-10 22:28:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:28:33 --> Input Class Initialized
+INFO - 2016-05-10 22:28:33 --> Language Class Initialized
+INFO - 2016-05-10 22:28:33 --> Language Class Initialized
+INFO - 2016-05-10 22:28:33 --> Config Class Initialized
+INFO - 2016-05-10 22:28:33 --> Loader Class Initialized
+INFO - 2016-05-10 22:28:33 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:28:33 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:28:33 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:28:33 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:28:33 --> Controller Class Initialized
+DEBUG - 2016-05-10 22:28:33 --> Main MX_Controller Initialized
+INFO - 2016-05-10 22:28:33 --> Model Class Initialized
+DEBUG - 2016-05-10 22:28:33 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 22:28:33 --> Model Class Initialized
+DEBUG - 2016-05-10 22:28:33 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/views/paket_website.php
+INFO - 2016-05-10 22:28:33 --> Final output sent to browser
+DEBUG - 2016-05-10 22:28:33 --> Total execution time: 0.0300
+INFO - 2016-05-10 22:28:46 --> Config Class Initialized
+INFO - 2016-05-10 22:28:46 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:28:46 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:28:46 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:28:46 --> URI Class Initialized
+INFO - 2016-05-10 22:28:46 --> Router Class Initialized
+INFO - 2016-05-10 22:28:46 --> Output Class Initialized
+INFO - 2016-05-10 22:28:46 --> Security Class Initialized
+DEBUG - 2016-05-10 22:28:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:28:46 --> Input Class Initialized
+INFO - 2016-05-10 22:28:46 --> Language Class Initialized
+INFO - 2016-05-10 22:28:46 --> Language Class Initialized
+INFO - 2016-05-10 22:28:46 --> Config Class Initialized
+INFO - 2016-05-10 22:28:46 --> Loader Class Initialized
+INFO - 2016-05-10 22:28:46 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:28:46 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:28:46 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:28:46 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:28:46 --> Controller Class Initialized
+DEBUG - 2016-05-10 22:28:46 --> Main MX_Controller Initialized
+INFO - 2016-05-10 22:28:46 --> Model Class Initialized
+DEBUG - 2016-05-10 22:28:46 --> File loaded: /home/rohmanahmad/public_html/malangsoftware.com/application/modules/Main/models/Main_model.php
+INFO - 2016-05-10 22:28:46 --> Model Class Initialized
+INFO - 2016-05-10 22:28:59 --> Config Class Initialized
+INFO - 2016-05-10 22:28:59 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:28:59 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:28:59 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:28:59 --> URI Class Initialized
+INFO - 2016-05-10 22:28:59 --> Router Class Initialized
+INFO - 2016-05-10 22:28:59 --> Output Class Initialized
+INFO - 2016-05-10 22:28:59 --> Security Class Initialized
+DEBUG - 2016-05-10 22:28:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:28:59 --> Input Class Initialized
+INFO - 2016-05-10 22:28:59 --> Language Class Initialized
+INFO - 2016-05-10 22:28:59 --> Language Class Initialized
+INFO - 2016-05-10 22:28:59 --> Config Class Initialized
+INFO - 2016-05-10 22:28:59 --> Loader Class Initialized
+INFO - 2016-05-10 22:28:59 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:28:59 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:28:59 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:28:59 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:28:59 --> Controller Class Initialized
+ERROR - 2016-05-10 22:28:59 --> 404 Page Not Found: ../modules/Main/controllers/Main/paket_jarigan
+INFO - 2016-05-10 22:34:59 --> Config Class Initialized
+INFO - 2016-05-10 22:34:59 --> Hooks Class Initialized
+DEBUG - 2016-05-10 22:34:59 --> UTF-8 Support Enabled
+INFO - 2016-05-10 22:34:59 --> Utf8 Class Initialized
+INFO - 2016-05-10 22:34:59 --> URI Class Initialized
+INFO - 2016-05-10 22:34:59 --> Router Class Initialized
+INFO - 2016-05-10 22:34:59 --> Output Class Initialized
+INFO - 2016-05-10 22:34:59 --> Security Class Initialized
+DEBUG - 2016-05-10 22:34:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-10 22:34:59 --> Input Class Initialized
+INFO - 2016-05-10 22:34:59 --> Language Class Initialized
+INFO - 2016-05-10 22:34:59 --> Language Class Initialized
+INFO - 2016-05-10 22:34:59 --> Config Class Initialized
+INFO - 2016-05-10 22:34:59 --> Loader Class Initialized
+INFO - 2016-05-10 22:34:59 --> Helper loaded: url_helper
+INFO - 2016-05-10 22:34:59 --> Helper loaded: html_helper
+INFO - 2016-05-10 22:34:59 --> Database Driver Class Initialized
+INFO - 2016-05-10 22:34:59 --> Session: Class initialized using 'files' driver.
+INFO - 2016-05-10 22:34:59 --> Controller Class Initialized
+ERROR - 2016-05-10 22:34:59 --> 404 Page Not Found: ../modules/Main/controllers/Main/paket_software
