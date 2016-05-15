@@ -32,11 +32,11 @@
 						<p class="col-md-5" style="color:#DACECE;font-size:12px;"><?=$product->kode_produk?></p>
 						<p class="col-md-7" style="color:#DACECE;font-size:12px;">Rp. <?=number_format($product->harga_jual,0)?></p>
 						<p class="col-md-12">
-							<?=anchor('page/detail/' . $product->nama_slug, 'Lihat' , [
+							<?=anchor(SOFTWARE_URL.'/detail/' . $product->nama_slug, 'Lihat' , [
 								'class'	=> 'btn btn-primary',
 								'role'	=> 'button'
 							])?>
-							<?=anchor('page/add_to_cart/' . $product->ID, 'Beli' , [
+							<?=anchor(SOFTWARE_URL.'/add_to_cart/' . $product->ID, 'Beli' , [
 								'class'	=> 'btn btn-warning right',
 								'role'	=> 'button'
 							])?>

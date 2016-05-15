@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Administrator extends MX_Controller {
+class Admin extends MX_Controller {
 
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('Administrator');
-		$this->load->model('madministrator','model');
+		$this->load->model('admin_model','model');
 		ts_is_login();
 	}
 

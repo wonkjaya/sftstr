@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // aktifkan untuk melihat profiler
-if($_SERVER['HTTP_HOST']=='server2-malangsoftware.com'){
+if($_SERVER['HTTP_HOST']!='malangsoftware.com'){
 	$dev=TRUE;
 }else{
 	$dev=FALSE;

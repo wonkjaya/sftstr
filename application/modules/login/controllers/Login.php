@@ -33,10 +33,10 @@ class Login extends CI_Controller {
 				
 				switch($valid_user->user_level){
 					case '00' : //admin
-								redirect('admin'); 
+								redirect('panel/admin'); 
 								break;
 					case '10' : //users
-								redirect('user');
+								redirect('panel/user');
 								break;
 					default: break; 
 				}
