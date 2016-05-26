@@ -65,7 +65,7 @@ $route['invoice'] = 'panel/administrator/invoice';
 
 // main controller
 $route['paket_website'] = 'main/paket_website';
-$route['paket_software'] = 'main/paket_software';
+$route['paket_software'] = 'services/software';
 $route['paket_komputer'] = 'main/paket_komputer';
 $route['paket_jaringan'] = 'main/paket_jarigan';
 

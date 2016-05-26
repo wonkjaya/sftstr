@@ -31,6 +31,7 @@ class Admin extends MX_Controller {
 
 	function products(){
 		if(isset($_GET['detail'])){
+			$this->model->simpan_produk();
 			$this->load->helper('form');
 			$data['data_content']='Product_detail';
 			$data['data']=array(
