@@ -168,3 +168,123 @@ INFO - 2016-05-13 11:33:53 --> Config Class Initialized
 INFO - 2016-05-13 11:33:53 --> Hooks Class Initialized
 DEBUG - 2016-05-13 11:33:53 --> UTF-8 Support Enabled
 INFO - 2016-05-13 11:33:53 --> Utf8 Class Initialized
+INFO - 2016-05-13 11:52:32 --> Config Class Initialized
+INFO - 2016-05-13 11:52:32 --> Hooks Class Initialized
+DEBUG - 2016-05-13 11:52:32 --> UTF-8 Support Enabled
+INFO - 2016-05-13 11:52:32 --> Utf8 Class Initialized
+INFO - 2016-05-13 11:52:32 --> URI Class Initialized
+INFO - 2016-05-13 11:52:32 --> Router Class Initialized
+INFO - 2016-05-13 11:52:32 --> Output Class Initialized
+INFO - 2016-05-13 11:52:32 --> Security Class Initialized
+DEBUG - 2016-05-13 11:52:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 11:52:32 --> Input Class Initialized
+INFO - 2016-05-13 11:52:32 --> Language Class Initialized
+ERROR - 2016-05-13 11:52:32 --> 404 Page Not Found: /index
+INFO - 2016-05-13 13:24:59 --> Config Class Initialized
+INFO - 2016-05-13 13:24:59 --> Hooks Class Initialized
+DEBUG - 2016-05-13 13:24:59 --> UTF-8 Support Enabled
+INFO - 2016-05-13 13:24:59 --> Utf8 Class Initialized
+INFO - 2016-05-13 13:24:59 --> URI Class Initialized
+INFO - 2016-05-13 13:24:59 --> Router Class Initialized
+INFO - 2016-05-13 13:24:59 --> Output Class Initialized
+INFO - 2016-05-13 13:24:59 --> Security Class Initialized
+DEBUG - 2016-05-13 13:24:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 13:24:59 --> Input Class Initialized
+INFO - 2016-05-13 13:24:59 --> Language Class Initialized
+ERROR - 2016-05-13 13:24:59 --> 404 Page Not Found: /index
+INFO - 2016-05-13 19:37:36 --> Config Class Initialized
+INFO - 2016-05-13 19:37:36 --> Hooks Class Initialized
+DEBUG - 2016-05-13 19:37:36 --> UTF-8 Support Enabled
+INFO - 2016-05-13 19:37:36 --> Utf8 Class Initialized
+INFO - 2016-05-13 19:37:36 --> URI Class Initialized
+INFO - 2016-05-13 19:37:36 --> Router Class Initialized
+INFO - 2016-05-13 19:37:36 --> Output Class Initialized
+INFO - 2016-05-13 19:37:36 --> Security Class Initialized
+DEBUG - 2016-05-13 19:37:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 19:37:36 --> Input Class Initialized
+INFO - 2016-05-13 19:37:36 --> Language Class Initialized
+ERROR - 2016-05-13 19:37:36 --> 404 Page Not Found: /index
+INFO - 2016-05-13 19:37:36 --> Config Class Initialized
+INFO - 2016-05-13 19:37:36 --> Hooks Class Initialized
+DEBUG - 2016-05-13 19:37:36 --> UTF-8 Support Enabled
+INFO - 2016-05-13 19:37:36 --> Utf8 Class Initialized
+INFO - 2016-05-13 19:37:36 --> URI Class Initialized
+INFO - 2016-05-13 19:37:36 --> Router Class Initialized
+INFO - 2016-05-13 19:37:36 --> Output Class Initialized
+INFO - 2016-05-13 19:37:36 --> Security Class Initialized
+DEBUG - 2016-05-13 19:37:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 19:37:36 --> Input Class Initialized
+INFO - 2016-05-13 19:37:36 --> Language Class Initialized
+ERROR - 2016-05-13 19:37:36 --> 404 Page Not Found: /index
+INFO - 2016-05-13 22:12:31 --> Config Class Initialized
+INFO - 2016-05-13 22:12:31 --> Hooks Class Initialized
+DEBUG - 2016-05-13 22:12:31 --> UTF-8 Support Enabled
+INFO - 2016-05-13 22:12:31 --> Utf8 Class Initialized
+INFO - 2016-05-13 22:12:31 --> URI Class Initialized
+INFO - 2016-05-13 22:12:31 --> Router Class Initialized
+INFO - 2016-05-13 22:12:31 --> Output Class Initialized
+INFO - 2016-05-13 22:12:31 --> Security Class Initialized
+DEBUG - 2016-05-13 22:12:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 22:12:31 --> Input Class Initialized
+INFO - 2016-05-13 22:12:31 --> Language Class Initialized
+ERROR - 2016-05-13 22:12:31 --> 404 Page Not Found: /index
+INFO - 2016-05-13 22:46:01 --> Config Class Initialized
+INFO - 2016-05-13 22:46:01 --> Hooks Class Initialized
+DEBUG - 2016-05-13 22:46:01 --> UTF-8 Support Enabled
+INFO - 2016-05-13 22:46:01 --> Utf8 Class Initialized
+INFO - 2016-05-13 22:46:01 --> URI Class Initialized
+INFO - 2016-05-13 22:46:01 --> Router Class Initialized
+INFO - 2016-05-13 22:46:01 --> Output Class Initialized
+INFO - 2016-05-13 22:46:01 --> Security Class Initialized
+DEBUG - 2016-05-13 22:46:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 22:46:01 --> Input Class Initialized
+INFO - 2016-05-13 22:46:01 --> Language Class Initialized
+ERROR - 2016-05-13 22:46:01 --> 404 Page Not Found: /index
+INFO - 2016-05-13 23:00:27 --> Config Class Initialized
+INFO - 2016-05-13 23:00:27 --> Hooks Class Initialized
+DEBUG - 2016-05-13 23:00:27 --> UTF-8 Support Enabled
+INFO - 2016-05-13 23:00:27 --> Utf8 Class Initialized
+INFO - 2016-05-13 23:00:27 --> URI Class Initialized
+INFO - 2016-05-13 23:00:27 --> Router Class Initialized
+INFO - 2016-05-13 23:00:27 --> Output Class Initialized
+INFO - 2016-05-13 23:00:27 --> Security Class Initialized
+DEBUG - 2016-05-13 23:00:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 23:00:27 --> Input Class Initialized
+INFO - 2016-05-13 23:00:27 --> Language Class Initialized
+ERROR - 2016-05-13 23:00:27 --> 404 Page Not Found: /index
+INFO - 2016-05-13 23:00:33 --> Config Class Initialized
+INFO - 2016-05-13 23:00:33 --> Hooks Class Initialized
+DEBUG - 2016-05-13 23:00:33 --> UTF-8 Support Enabled
+INFO - 2016-05-13 23:00:33 --> Utf8 Class Initialized
+INFO - 2016-05-13 23:00:33 --> URI Class Initialized
+INFO - 2016-05-13 23:00:33 --> Router Class Initialized
+INFO - 2016-05-13 23:00:33 --> Output Class Initialized
+INFO - 2016-05-13 23:00:33 --> Security Class Initialized
+DEBUG - 2016-05-13 23:00:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 23:00:33 --> Input Class Initialized
+INFO - 2016-05-13 23:00:33 --> Language Class Initialized
+ERROR - 2016-05-13 23:00:33 --> 404 Page Not Found: /index
+INFO - 2016-05-13 23:07:51 --> Config Class Initialized
+INFO - 2016-05-13 23:07:51 --> Hooks Class Initialized
+DEBUG - 2016-05-13 23:07:51 --> UTF-8 Support Enabled
+INFO - 2016-05-13 23:07:51 --> Utf8 Class Initialized
+INFO - 2016-05-13 23:07:51 --> URI Class Initialized
+INFO - 2016-05-13 23:07:51 --> Router Class Initialized
+INFO - 2016-05-13 23:07:51 --> Output Class Initialized
+INFO - 2016-05-13 23:07:51 --> Security Class Initialized
+DEBUG - 2016-05-13 23:07:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 23:07:51 --> Input Class Initialized
+INFO - 2016-05-13 23:07:51 --> Language Class Initialized
+ERROR - 2016-05-13 23:07:51 --> 404 Page Not Found: /index
+INFO - 2016-05-13 23:19:30 --> Config Class Initialized
+INFO - 2016-05-13 23:19:30 --> Hooks Class Initialized
+DEBUG - 2016-05-13 23:19:30 --> UTF-8 Support Enabled
+INFO - 2016-05-13 23:19:30 --> Utf8 Class Initialized
+INFO - 2016-05-13 23:19:30 --> URI Class Initialized
+INFO - 2016-05-13 23:19:30 --> Router Class Initialized
+INFO - 2016-05-13 23:19:30 --> Output Class Initialized
+INFO - 2016-05-13 23:19:30 --> Security Class Initialized
+DEBUG - 2016-05-13 23:19:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-05-13 23:19:30 --> Input Class Initialized
+INFO - 2016-05-13 23:19:30 --> Language Class Initialized
+ERROR - 2016-05-13 23:19:30 --> 404 Page Not Found: /index
