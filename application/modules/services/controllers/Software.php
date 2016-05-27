@@ -1,29 +1,29 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Software extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('model_products');
+		$this->load->model('model_software','model');
 		$this->load->helper('helper');
 		$this->load->library('cart');
 	}
 
 	public function index()
 	{
-		$data['products'] = $this->model_products->get_all_products();
+		$data['products'] = $this->model->get_all_products();
 		$this->load->view('index', $data);
 	}
 
 	function detail($slug){
-		$data['product']=$this->model_products->get_detail_product($slug);
+		$data['product']=$this->model->get_detail_product($slug);
 		$this->load->view('detail',$data);
 	}
 	
-	public function add_to_cart($product_id)
+	/*public function add_to_cart($product_id)
 	{
-		$product = $this->model_products->find($product_id);
+		$product = $this->model->find($product_id);
 		$data = array(
 					   'id'      => $product->id,
 					   'qty'     => 1,
@@ -46,7 +46,7 @@ class Page extends CI_Controller {
 		$this->cart->destroy();
 		redirect(base_url());
 	}
-
+	*/
 
 }
 

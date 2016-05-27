@@ -81,12 +81,12 @@
 								<h3 style="color:#F71E1E">Harga : Rp. <?=number_format($harga_jual,0)?></h3>
 							</div>
 							<div class="col-md-6 col-xs-6 col-sm-6">
-								<p>Diskon Bulan Ini: <span style="color:red;font-size:25px"> 20%</span></p>
+								<!--p>Diskon Bulan Ini: <span style="color:red;font-size:25px"> 20%</span></p-->
 								<p>Diskon Khusus Member: <span style="color:red;font-size:25px"> 25%</span></p>
 							</div>
 							<div class="col-md-12">
-								<a href="" class="btn btn-share btn-primary col-md-10 col-sm-10 col-xs-10">Daftar</a>
-								<a href="" class="btn btn-share col-md-2 col-sm-2 col-xs-2">Login</a>
+								<a href="" class="btn btn-share btn-primary col-md-2 col-sm-1 col-xs-2" style="float:right">Daftar</a>
+								<a href="" class="btn btn-share col-md-1 col-sm-1 col-xs-1" style="float:right">Login</a>
 							</div>
 							<div class="col-md-12">
 								<br/>

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Main extends MX_Controller {
+class Paket_software extends MX_Controller {
 
 	public function __construct()
 	{
@@ -11,17 +11,11 @@ class Main extends MX_Controller {
 	public function index()
 	{
 		$data['title']="Malang Software Center";
-		$this->load->view('index', $data);
+		//$this->load->view('index', $data);
 	}
 
-	function get_domain_available(){
-		$data=$this->model->get_domain_available();
-		print_r($data->DomainInfo->domainAvailability);
-	}
+	
 
-	function kirim_pengajuan(){
-		$this->model->kirim_pengajuan();
-	}
 
 }
 

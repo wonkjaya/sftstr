@@ -18,8 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // aktifkan untuk melihat profiler
-
-define('DEVELOPMENT',FALSE);
+if($_SERVER['HTTP_HOST']!='malangsoftware.com'){
+	$dev=TRUE;
+}else{
+	$dev=FALSE;
+}
+define('DEVELOPMENT',$dev);
 
 
 $config['base_url'] = '';

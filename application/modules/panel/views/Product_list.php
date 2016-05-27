@@ -1,7 +1,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 		  <div class="panel-heading">Data Semua Produk 
-		  <div class="pull-right"><?=anchor('product_list?add_new','Add New')?></div>
+		  <div class="pull-right"><?=anchor(ADMIN_URL.'/products?add_new','Add New')?></div>
 		  </div>
 		  <div class="panel-body">
 		    <table class="table table-bordered">
@@ -22,7 +22,7 @@
 			    		<td><?=$no?></td>
 			    		<td><?=$product->id_user?></td>
 			    		<td><?=$product->kode_produk?></td>
-			    		<td><?=anchor('product_list?detail&id='.$product->ID,$product->nama_produk)?></td>
+			    		<td><?=anchor(ADMIN_URL.'/products?detail&id='.$product->ID,$product->nama_produk)?></td>
 			    		<td style="text-align:right"><?=number_format($product->harga_jual)?></td>
 			    		<td style="text-align:right">
 			    			<a href="" class="btn btn-default btn-xs"> <span class="glyphicon glyphicon-eye-open"></span></a>

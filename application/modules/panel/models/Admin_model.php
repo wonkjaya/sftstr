@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Madministrator extends CI_Model {
+class Admin_model extends CI_Model {
 
 	public function check_credential()
 	{
@@ -23,20 +23,28 @@ class Madministrator extends CI_Model {
 		$page=($this->uri->segment(2) > 0)?$this->uri->segment(2):0;
 		$this->db->limit(20,$page);
 		$this->db->select(['ID','id_user','kode_produk','nama_produk','harga_jual']);
-		$q=$this->db->get('data_produk');
+		$q=$this->db->get('produk_data');
 		if($q->num_rows() > 0)return $q->result();
 	}
 
 	function get_product(){
-
 		if(isset($_GET['id'])){
-			$this->db->where('ID',$_GET['id']);
+			$this->db->limit(1);
+			$this->db->where('pd.ID',$_GET['id']);
+			$this->db->select(['pd.*','mt.meta_name','mt.meta_tag','mt.meta_description','dsc.deskripsi_produk','dsc.deskripsi_developer','pg.image1','pg.image2','pg.image3','pg.image4','pg.image5']);
+			$this->db->join('metas mt','mt.ID=pd.id_meta');
+			$this->db->join('produk_deskripsi dsc','dsc.ID=pd.id_deskripsi');
+			$this->db->join('produk_gambar pg','pg.ID=pd.id_kode_gambar');
+			$q=$this->db->get('produk_data pd');
+			if($q->num_rows()>0){
+				return $q->result();
+			}
 		}
 	}
 
 	function get_categories(){
 		$this->db->select(array('ID','name'));
-		$q=$this->db->get('kategori_produk');
+		$q=$this->db->get('produk_kategori');
 		if($q->num_rows() > 0){
 			return $q->result();
 		}
@@ -44,7 +52,7 @@ class Madministrator extends CI_Model {
 
 	function get_total_products(){
 		$this->db->select(['count(ID) as count']);
-		$count=$this->db->count_all('data_produk');
+		$count=$this->db->count_all('produk_data');
 		return $count;
 	}
 

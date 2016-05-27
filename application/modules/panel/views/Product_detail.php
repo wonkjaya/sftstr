@@ -8,8 +8,8 @@ $deskripsi_prd='';$deskripsi_dev='';
 $image1='';$image2='';$image3='';$image4='';
 
 $status='empty';
-if(isset($product)){
-	foreach($produk as $prd){
+if(isset($products)){
+	foreach($products as $prd){//print_r($prd);
 		$kodePrd=$prd->kode_produk;
 		$slug=$prd->slug;
 		$namaPrd=$prd->nama_produk;
@@ -53,7 +53,7 @@ $categories_array=function ($categories){
 $title=(isset($_GET['addnew']))?'New User':(isset($_GET['detail'])?'Detail User':'Title');
 $type=isset($_GET['addnew'])?'addnew':(isset($_GET['detail'])?'update':'');
 $id=isset($_GET['id'])?'&id='.$_GET['id']:'';
-$button_trash=($_GET['addnew'])?'<a href="'.site_url('produckk_list?trash').'" class="btn btn-danger">Trash</a>':'';
+$button_trash=isset($_GET['addnew'])?'<a href="'.site_url('produckk_list?trash').'" class="btn btn-danger">Trash</a>':'';
 $panel_class=function($status=''){
 					return ($status == 1 || $status=='empty')?'primary':'danger';
 			}
@@ -63,50 +63,87 @@ $panel_class=function($status=''){
 		<div class="panel panel-<?=$panel_class(isset($status)?$status:'')?>">
 		  <div class="panel-heading"><?=$title?></div>
 		  <div class="panel-body">
-		   <div class="col-md-12">
-		   <?php echo validation_errors(); ?>
-		    <form id="form-new" method="POST">
+		   <form id="form-new" method="POST">
+		    <div class="col-md-4">
+		    <?php echo validation_errors(); ?>
 		   		<table class="table">
-		   			<tr>
-		   				<th>Kode Produk</th>
-		   				<td id="no-border"><?=form_input('kodePrd',$kodePrd,'class="form-control"')?></td>
-
-		   				<th>Harga Beli</th>
-		   				<td id="no-border"><?=form_input('hargaBeli',$hargaBeli,'class="form-control"')?></td>
-		   			</tr>
 		   			<tr>
 		   				<th>Nama Produk</th>
 		   				<td id="no-border"><?=form_input('namaPrd',$namaPrd,'class="form-control"')?></td>
-
-		   				<th>Harga Jual</th>
+		   			</tr>
+		   			<tr>
+		   				<th>Kode Produk</th>
+		   				<td id="no-border"><?=form_input('kodePrd',$kodePrd,'class="form-control"')?></td>
+		   			</tr>
+		   			<!--tr>
+		   				<th>Harga Beli</th>
+		   				<td id="no-border"><?=form_input('hargaBeli',$hargaBeli,'class="form-control"')?></td>
+		   			</tr-->
+		   			<tr>
+		   				<th>Harga</th>
 		   				<td id="no-border"><?=form_input('hargaJual',$hargaJual,'class="form-control"')?></td>
 		   			</tr>
 		   			<tr>
 		   				<th>Kategori</th>
 		   				<td id="no-border"><?=form_dropdown('kategori',$categories_array($categories),$kategori,'class="form-control"')?></td>
-
+		   			</tr>
+		   			<tr>
 		   				<th>Diskon</th>
 		   				<td id="no-border"><?=form_input('diskon',$diskon,'class="form-control"')?></td>
 		   			</tr>
-		   			<!--Deskripsi Produk-->
 		   			<tr>
-		   				<th colspan="4" id="no-border">Deskripsi Produk</th>
+		   				<th colspan=2>Gambar</th>
 		   			</tr>
 		   			<tr>
-		   				<td colspan="4">
-		   					<textarea id="deskripsi_prd" name="deskripsi_prd"><?=$deskripsi_prd?></textarea>
-		   				</td>
-		   			</tr>
+		   				<td id="no-border" colspan="2">
+		   					<div class="img-rounded ts-image-preview">
+		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image1">
+		   						<?=form_upload('image1','','class="ts-upload"')?>
+		   					</div>
+		   					<div class="img-rounded ts-image-preview">
+		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image2">
+		   						<?=form_upload('image2','','class="ts-upload"')?>
+		   					</div>
+		   					<div class="img-rounded ts-image-preview">
+		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image3">
+		   						<?=form_upload('image3','','class="ts-upload"')?>
+		   					</div>
+		   					<div class="img-rounded ts-image-preview">
+		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image4">
+		   						<?=form_upload('image4','','class="ts-upload"')?>
+		   					</div>
+		   					<div class="img-rounded ts-image-preview">
+		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image5">
+		   						<?=form_upload('image5','','class="ts-upload"')?>
+		   					</div>
+		   					<script type="text/javascript">
+		   						function readURL(input) {
+		   							var id=$(input).attr('name');
+								    if (input.files && input.files[0]) {
+								        var reader = new FileReader();
+								        reader.onload = function (e) {
+								            $('#'+id).attr('src', e.target.result);
+								        }
+								        reader.readAsDataURL(input.files[0]);
+								    }
+								}
+								$("[name='image1'],[name='image2'],[name='image3'],[name='image4'],[name='image5']").change(function(){
+								    readURL(this);
+								});
 
-		   			<!--Deskripsi Developer-->
-		   			<tr>
-		   				<th colspan="4" id="no-border">Deskripsi Untuk Developer</th>
-		   			</tr>
-		   			<tr>
-		   				<td colspan="4">
-		   					<textarea id="deskripsi_dev" name="deskripsi_dev"><?=$deskripsi_dev?></textarea>
+		   					</script>
 		   				</td>
 		   			</tr>
+		   			<!--Deskripsi Produk-->
+		   			
+		   		</table>
+		    </div>
+		    <div class="col-md-8">
+		    	
+   				<label>Deskripsi Produk</label>
+   				<textarea id="deskripsi_prd" name="deskripsi_prd"><?=$deskripsi_prd?></textarea>
+   				<label style="margin-top: 20px;">Deskripsi developer</label>
+   				<textarea id="deskripsi_dev" name="deskripsi_dev"><?=$deskripsi_dev?></textarea>
 		   			<script type="text/javascript" src="<?=base_url('assets/tinymce/tiny_mce.js')?>"></script>
 		   			<script type="text/javascript">
 		   			$(document).ready(function(){
@@ -119,26 +156,20 @@ $panel_class=function($status=''){
 						});
 		   			});
 		   			</script>
-		   			<tr>
-		   				<td id="no-border"></td>
-		   				<td id="no-border"></td>
-		   				<td id="no-border"></td>
-		   				<td id="no-border">
-		   					<input class="btn btn-primary" type="submit" value="Simpan"/>
+		    </div>
+		    <div class="col-md-4">
+		    	<input class="btn btn-primary" type="submit" value="Simpan"/>
 
-		   					<div class="btn-group" style="float:right;margin-right:50px">
-			   					<input class="btn btn-warning" type="reset" value="Reset"/>
+				<div class="btn-group" style="float:right;margin-right:50px">
+					<input class="btn btn-warning" type="reset" value="Reset"/>
 
-			   					<a href="#" class="btn btn-danger" onclick="history.back()">Batal</a>
-			   					<?php
-			   						echo $button_trash;
-			   					?>
-			   				</div>
-		   				</td>
-		   			</tr>
-		   		</table>
-		   	</form>
-		   </div>
+					<a href="#" class="btn btn-danger" onclick="history.back()">Batal</a>
+					<?php
+						echo $button_trash;
+					?>
+				</div>
+		    </div>
+		   </form>
 		  </div>
 		</div>
 	</div>
