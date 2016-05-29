@@ -180,8 +180,30 @@ class Admin_model extends CI_Model {
 			$deskripsi_dev=$this->input->post('deskripsi_dev');
 			
 			// insert new deskripsi
-
+			$this->upload_files();
 		}
+	}
+
+	function upload_files(){
+		$config['upload_path']          = FCPATH.'/uploads/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['max_size']             = 100;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+        $imagename=array('image1','image2','image3','image4','image5');
+        $time=date('ymdgis');
+        foreach($imagename as $image){
+        	$config['file_name']=$image.'-'.$time;
+        	if($_FILES[$image]['tmp_name'] != ''):
+		        if ( ! $this->upload->do_upload($image)) // gambar berbentuk array
+		        {
+		            $error = array('error' => $this->upload->display_errors());
+		        }
+		    endif;
+        }
+
 	}
 
 }

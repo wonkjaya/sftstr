@@ -50,20 +50,22 @@ $categories_array=function ($categories){
 		return $data;
 	}
 };
-$title=(isset($_GET['addnew']))?'New User':(isset($_GET['detail'])?'Detail User':'Title');
+$title=(isset($_GET['addnew']))?'Produk Baru':(isset($_GET['detail'])?'Produk Detail':'Title');
 $type=isset($_GET['addnew'])?'addnew':(isset($_GET['detail'])?'update':'');
 $id=isset($_GET['id'])?'&id='.$_GET['id']:'';
 $button_trash=isset($_GET['addnew'])?'<a href="'.site_url('produckk_list?trash').'" class="btn btn-danger">Trash</a>':'';
 $panel_class=function($status=''){
 					return ($status == 1 || $status=='empty')?'primary':'danger';
-			}
+			};
+$target='?'.$type;
 ?>
+
 
 	<div class="col-md-12">
 		<div class="panel panel-<?=$panel_class(isset($status)?$status:'')?>">
 		  <div class="panel-heading"><?=$title?></div>
 		  <div class="panel-body">
-		   <form id="form-new" method="POST">
+		   <?php echo form_open_multipart($this->uri->uri_string().$target); ?>
 		    <div class="col-md-4">
 		    <?php echo validation_errors(); ?>
 		   		<table class="table">

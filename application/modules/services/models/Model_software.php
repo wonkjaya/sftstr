@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+# untuk non admin
+
 class Model_software extends CI_Model {
 
 	public function get_all_products($page=1){
@@ -35,23 +37,6 @@ class Model_software extends CI_Model {
 		} else {
 			return array();
 		}
-	}
-	
-	public function create($data_products){
-		//Query INSERT INTO
-		$this->db->insert('produk_data', $data_products);
-	}
-
-	public function update($id, $data_products){
-		//Query UPDATE FROM ... WHERE id=...
-		$this->db->where('id', $id)
-				 ->update('produk_data', $data_products);
-	}
-	
-	public function delete($id){
-		//Query DELETE ... WHERE id=...
-		$this->db->where('id', $id)
-				 ->delete('produk_data');
 	}
 	
 }

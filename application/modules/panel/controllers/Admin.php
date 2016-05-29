@@ -31,9 +31,9 @@ class Admin extends MX_Controller {
 
 	function products(){
 		if(isset($_GET['detail'])){
-			$this->model->simpan_produk();
+			$this->model->update_product();
 			$this->load->helper('form');
-			$data['data_content']='Product_detail';
+			$data['data_content']='Product_form';
 			$data['data']=array(
 				'products'=>$this->model->get_product(),
 				'categories'=>$this->model->get_categories()
@@ -41,7 +41,7 @@ class Admin extends MX_Controller {
 		}elseif(isset($_GET['addnew'])){
 			$this->model->save_new_product();
 			$this->load->helper('form');
-			$data['data_content']='Product_detail';
+			$data['data_content']='Product_form';
 			$data['data']=array(
 				'categories'=>$this->model->get_categories()
 			);

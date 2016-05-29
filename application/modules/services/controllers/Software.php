@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+# digunakan untuk non admin
+
 class Software extends CI_Controller {
 
 	public function __construct()
