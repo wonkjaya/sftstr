@@ -54,20 +54,7 @@ $route['default_controller'] = 'main';
 
 $route['logout'] = 'panel/admin/logout';
 
-$route['dashboard'] = 'panel/administrator/dashboard';
-
-$route['products'] = 'panel/administrator/products';
-$route['products/(:num)'] = 'panel/administrator/products/$1';
-
-$route['users'] = 'panel/administrator/users';
-
-$route['invoice'] = 'panel/administrator/invoice';
-
 // main controller
-$route['paket_website'] = 'main/paket_website';
-$route['paket_software'] = 'services/software';
-$route['paket_komputer'] = 'main/paket_komputer';
-$route['paket_jaringan'] = 'main/paket_jarigan';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
