@@ -89,4 +89,4 @@ define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 // penambahan sendiri 
 # URLS
 define('SOFTWARE_URL', 'services/software');
-define('ADMIN_URL', 'panel/admin');
+define('ADMIN_SOFTWARE', 'panel/software');

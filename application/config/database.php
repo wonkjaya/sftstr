@@ -61,7 +61,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
-if($_SERVER['HTTP_HOST'] == 'server2-malangsoftware.com'){
+//print_r($_SERVER['HTTP_HOST']);
+if(strpos($_SERVER['HTTP_HOST'],'server2-malangsoftware.com') !== ''){
 	$username='softwarestore';
 	$password='root';
 	$dbs='dev_softwarestore';

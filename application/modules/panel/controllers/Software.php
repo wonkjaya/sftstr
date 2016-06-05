@@ -1,22 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Admin extends MX_Controller {
+class Software extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->helper('Administrator');
-		$this->load->model('admin_model','model');
+		$this->load->helper('Software');
+		$this->load->model('software_model','model');
 		ts_is_login();
 	}
 
-	public function logout()
-	{
+	function logout(){
 		$this->session->sess_destroy();
 		redirect('login');
 	}
 
-	public function index()
-	{
+	function index(){
 		$this->dashboard();
 	}
 

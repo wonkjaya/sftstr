@@ -24,7 +24,7 @@
 														</ul>
 														<span>Mulai Dari:</span>
 														<span class="price">IDR 599.***</span>
-														<div class="aligncenter"><a href="<?=site_url('paket_website')?>" class="link1"><span><span>Learn More</span></span></a></div>
+														<div class="aligncenter"><a href="<?=site_url('services/website')?>" class="link1"><span><span>Learn More</span></span></a></div>
 													</div>
 												</div>
 											</div>
@@ -53,7 +53,7 @@
 														</ul>
 														<span>Mulai Dari:</span>
 														<span class="price">IDR 499.***</span>
-														<div class="aligncenter"><a href="<?=site_url('paket_software')?>" class="link1"><span><span>Learn More</span></span></a></div>
+														<div class="aligncenter"><a href="<?=site_url('services/software')?>" class="link1"><span><span>Learn More</span></span></a></div>
 													</div>
 												</div>
 											</div>
@@ -82,7 +82,7 @@
 														</ul>
 														<span>Mulai Dari:</span>
 														<span class="price">IDR 18.999***</span>
-														<div class="aligncenter"><a href="<?=site_url('paket_komputer')?>" class="link1"><span><span>Learn More</span></span></a></div>
+														<div class="aligncenter"><a href="<?=site_url('services/komputer')?>" class="link1"><span><span>Learn More</span></span></a></div>
 													</div>
 												</div>
 											</div>
@@ -111,7 +111,7 @@
 														</ul>
 														<span>Mulai Dari:</span>
 														<span class="price">IDR 2.999.***</span>
-														<div class="aligncenter"><a href="<?=site_url('paket_jaringan')?>" class="link1"><span><span>Learn More</span></span></a></div>
+														<div class="aligncenter"><a href="<?=site_url('services/networking')?>" class="link1"><span><span>Learn More</span></span></a></div>
 													</div>
 												</div>
 											</div>

@@ -1,8 +1,12 @@
-<div class="col-xs-12 col-md-12 col-sm-5" id="ts-sidebar-2">
+<div class="col-xs-12 col-md-12 col-sm-5 " id="ts-sidebar-2" >
 	<div class="col-md-12 ts-sidebar-label" id="sidebar-title">
 		<h4 class="">Customer Service</h4>
 	</div>
-	<img src="<?=base_url((!isset($right))?'assets/images/cs.jpg':'assets/images/cs_right.png')?>" class="img-circle" width="100px" style="margin-left:20%;margin-top:20px">
+	<img src="<?=base_url((!isset($right))?'assets/images/cs.jpg':'assets/images/cs_right.png')?>" class="img-circle ts-image-cs" width="100px">
+	<p class="ts-titletag">
+		<b>MalangSoftware</b><br/>
+		<span>Toko software terlengkap dan terbaik di indonesia</span>
+	</p>
 </div>
 <div class="col-xs-12 col-md-12 col-sm-5" id="ts-sidebar-3">
 	<b>Contact Person:</b>

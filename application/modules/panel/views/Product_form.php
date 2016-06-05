@@ -136,6 +136,20 @@ $target='?'.$type;
 		   					</script>
 		   				</td>
 		   			</tr>
+		   			<tr>
+		   				<th>ManualBook</th>
+		   				<td>
+		   					<input type="file" name="buku_panduan" accept=".pdf,.zip,.rar,.gz">
+		   					<span id="helpBlock" class="help-block ts-help">Only *.PDF or Compressed file</span>
+		   				</td>
+		   			</tr>
+		   			<tr>
+		   				<th>File</th>
+		   				<td>
+		   					<input type="file" name="software" accept=".pdf,.zip,.rar,.gz">
+		   					<span id="helpBlock" class="help-block ts-help">Only *.PDF or Compressed file</span>
+		   				</td>
+		   			</tr>
 		   			<!--Deskripsi Produk-->
 		   			
 		   		</table>

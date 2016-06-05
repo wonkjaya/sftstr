@@ -1,6 +1,6 @@
 #ts-sidebar-1,#ts-sidebar-2,#ts-sidebar-3,#ts-sidebar-4{
 	min-height: 100px;
-}
+} 
 .ts-footer{
 	background: #8285E0;
 	min-height: 100px;
@@ -18,7 +18,7 @@
 	text-align:right;
 }
 .ts-sidebar-label{
-	background:#F8F8F8;
+	background:#96d206;
 	color:#777;
 }
 .ts-contacts{
@@ -47,4 +47,17 @@
 	float:left;
 	position: relative;
     overflow: hidden;
+}
+.ts-titletag{
+	text-align: center;
+}
+.ts-titletag b{
+	padding: 30px;
+	width:100%;
+}
+.ts-image-cs{
+	margin:20px 90px;
+}
+.ts-help{
+	font-size: 11px;
 }

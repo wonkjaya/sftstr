@@ -56,22 +56,22 @@ function ts_get_header($options=array()){
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li class="'.($menu_aktif($options,1)).'"><a href="'.site_url(ADMIN_URL.'/dashboard').'">HOME<span class="sr-only">(Dashboard)</span></a></li>
+			        <li class="'.($menu_aktif($options,1)).'"><a href="'.site_url(ADMIN_SOFTWARE.'/dashboard').'">HOME<span class="sr-only">(Dashboard)</span></a></li>
 			        <li class="dropdown '.($menu_aktif($options,2)).'">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produk <span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="'.site_url(ADMIN_URL.'/products?addnew').'">New Produk</a></li>
-			            <li><a href="'.site_url(ADMIN_URL.'/products?aktif').'">Browse Produk</a></li>
+			            <li><a href="'.site_url(ADMIN_SOFTWARE.'/products?addnew').'">New Produk</a></li>
+			            <li><a href="'.site_url(ADMIN_SOFTWARE.'/products?aktif').'">Browse Produk</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown '.($menu_aktif($options,3)).'">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Users<span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="'.site_url(ADMIN_URL.'/users?addnew').'">New Users</a></li>
-			            <li><a href="'.site_url(ADMIN_URL.'/users?aktif').'">Browse Users</a></li>
+			            <li><a href="'.site_url(ADMIN_SOFTWARE.'/users?addnew').'">New Users</a></li>
+			            <li><a href="'.site_url(ADMIN_SOFTWARE.'/users?aktif').'">Browse Users</a></li>
 			          </ul>
 			        </li>
-			        <li class="'.($menu_aktif($options,4)).'"><a href="'.site_url(ADMIN_URL.'/invoice').'">Invoice</a></li>
+			        <li class="'.($menu_aktif($options,4)).'"><a href="'.site_url(ADMIN_SOFTWARE.'/invoice').'">Invoice</a></li>
 			        './*<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Invoices<span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
