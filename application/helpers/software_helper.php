@@ -8,23 +8,6 @@ function ts_get_head($data=''){
 	$title=(isset($data['title']))?$data['title']:'Administrator';
 	echo '<title>'.$title.'</title>';
 }
-
-function ts_get_username(){
-	return (isset($_SESSION['username']))?$_SESSION['username']:false;
-}
-
-function ts_get_level(){
-	return (isset($_SESSION['level']))?$_SESSION['level']:false;
-}
-
-function ts_is_login($redirect=false){ // redirect = 'url'
-	if(ts_get_level() !== false){
-		$url=(ts_get_level() == '00')?'admin':'user';
-	}
-	if($redirect == true and isset($url))	redirect($url);
-	return ts_get_username();
-}
-
 function ts_get_header($options=array()){
 	$username=function(){
 		$email=ts_get_username();

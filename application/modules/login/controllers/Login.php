@@ -9,7 +9,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->helper('administrator');
+		$this->load->helper('admin');
 		ts_is_login(true); // check if login
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('email','Email','required');
@@ -33,10 +33,10 @@ class Login extends CI_Controller {
 				
 				switch($valid_user->user_level){
 					case '00' : //admin
-								redirect('panel/admin'); 
+								redirect('panel/software'); 
 								break;
 					case '10' : //users
-								redirect('panel/user');
+								redirect('panel/software');
 								break;
 					default: break; 
 				}

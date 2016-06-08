@@ -4,7 +4,7 @@ class Software extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->helper('Software');
+		$this->load->helper(['Software','admin']);
 		$this->load->model('software_model','model');
 		ts_is_login();
 	}

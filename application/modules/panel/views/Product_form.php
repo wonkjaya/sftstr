@@ -3,7 +3,7 @@ $kodePrd='';$slug='';$namaPrd='';$kategori='';$hargaBeli='';$hargaJual='';$url_d
 // META
 $metaName='';$metaTag='';$metaDeskription='';
 // DESKRIPSI
-$deskripsi_prd='';$deskripsi_dev='';
+$deskripsi_prd='';//$deskripsi_dev='';
 // IMAGE
 $image1='';$image2='';$image3='';$image4='';
 
@@ -26,7 +26,7 @@ if(isset($products)){
 
 		// DESKRIPSI
 		$deskripsi_prd=$prd->deskripsi_produk;
-		$deskripsi_dev=$prd->deskripsi_developer;
+		//$deskripsi_dev=$prd->deskripsi_developer;
 
 		// IMAGE
 		$image1=$prd->image1;
@@ -66,7 +66,7 @@ $target='?'.$type;
 		  <div class="panel-heading"><?=$title?></div>
 		  <div class="panel-body">
 		   <?php echo form_open_multipart($this->uri->uri_string().$target); ?>
-		    <div class="col-md-4">
+		    <div class="col-md-5">
 		    <?php echo validation_errors(); ?>
 		   		<table class="table">
 		   			<tr>
@@ -154,26 +154,25 @@ $target='?'.$type;
 		   			
 		   		</table>
 		    </div>
-		    <div class="col-md-8">
+		    <div class="col-md-7">
 		    	
    				<label>Deskripsi Produk</label>
    				<textarea id="deskripsi_prd" name="deskripsi_prd"><?=$deskripsi_prd?></textarea>
-   				<label style="margin-top: 20px;">Deskripsi developer</label>
-   				<textarea id="deskripsi_dev" name="deskripsi_dev"><?=$deskripsi_dev?></textarea>
+   				<!--label style="margin-top: 20px;">Deskripsi developer</label>
+   				<textarea id="deskripsi_dev" name="deskripsi_dev"><?=$deskripsi_dev?></textarea-->
 		   			<script type="text/javascript" src="<?=base_url('assets/tinymce/tiny_mce.js')?>"></script>
 		   			<script type="text/javascript">
 		   			$(document).ready(function(){
 		   				tinymce.init({
 						  selector: 'textarea',  // change this value according to your HTML
 						    width: '100%',
-						    height: 300,
-						    toolbar: 'insert file undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+						    height: 300
 
 						});
 		   			});
 		   			</script>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-4" style="margin-top:30px;">
 		    	<input class="btn btn-primary" type="submit" value="Simpan"/>
 
 				<div class="btn-group" style="float:right;margin-right:50px">
