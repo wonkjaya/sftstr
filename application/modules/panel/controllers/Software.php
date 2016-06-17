@@ -28,8 +28,9 @@ class Software extends CI_Controller {
 	}
 
 	function products(){
-		if(isset($_GET['detail'])){
+		if(isset($_GET['update'])){
 			$this->model->update_product();
+		}elseif(isset($_GET['detail'])){
 			$this->load->helper('form');
 			$data['data_content']='Product_form';
 			$data['data']=array(
@@ -49,6 +50,8 @@ class Software extends CI_Controller {
 				'products'=>$this->model->get_product_list(),
 				'pagging'=>$this->set_pagging($this->model->get_total_products(),'product_list')
 			);
+			$data['cats']=$this->model->get_categories($is_user=true); // filter by user
+			$this->load->helper('form');
 		}
 		$data['aktif_menu']=2; //products
 		$this->load->view('Index',$data);
@@ -118,4 +121,5 @@ class Software extends CI_Controller {
 
 		return $this->pagination->create_links();
 	}
+	
 }

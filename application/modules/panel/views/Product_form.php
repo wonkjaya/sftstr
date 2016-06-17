@@ -9,32 +9,34 @@ $image1='';$image2='';$image3='';$image4='';
 
 $status='empty';
 if(isset($products)){
+	$url_action='software/product?update';
 	foreach($products as $prd){//print_r($prd);
-		$kodePrd=$prd->kode_produk;
-		$slug=$prd->slug;
-		$namaPrd=$prd->nama_produk;
-		$kategori=$prd->id_kategori;
-		$hargaBeli=$prd->harga_beli;
-		$hargaJual=$prd->harga_jual;
-		$diskon=$prd->diskon;
-		$url_demo=$prd->url_demo;
-
+		if($i=1){
+			$kodePrd=$prd->kode_produk;
+			$slug=$prd->slug;
+			$namaPrd=$prd->nama_produk;
+			$kategori=$prd->id_kategori;
+			//$hargaBeli=$prd->harga_beli;
+			$hargaJual=$prd->harga_jual;
+			$diskon=$prd->diskon;
+			$url_demo=$prd->url_demo;
+			// DESKRIPSI
+			$deskripsi_prd=$prd->deskripsi_produk;
+			//$deskripsi_dev=$prd->deskripsi_developer;
+			//manualbook
+			$manualbook=$prd->manual_book;
+			$file_software=$prd->url_demo;
+			// IMAGE
+			$path_image=base_url('/uploads/software/file-images').'/';
+			$image1=$path_image.$prd->image1;
+			$image2=$path_image.$prd->image2;
+			$image3=$path_image.$prd->image3;
+			$image4=$path_image.$prd->image4;
+		}
 		// META
-		$metaName=$prd->meta_name;
-		$metaTag=$prd->meta_tag;
-		$metaDeskription=$prd->meta_description;
-
-		// DESKRIPSI
-		$deskripsi_prd=$prd->deskripsi_produk;
-		//$deskripsi_dev=$prd->deskripsi_developer;
-
-		// IMAGE
-		$image1=$prd->image1;
-		$image2=$prd->image2;
-		$image3=$prd->image3;
-		$image4=$prd->image4;
-
+		$meta[$prd->key_meta]=$prd->value;
 	}
+	//print_r($meta);
 }
 /*if(isset($categories)){
 	print_r($categories);
@@ -58,6 +60,7 @@ $panel_class=function($status=''){
 					return ($status == 1 || $status=='empty')?'primary':'danger';
 			};
 $target='?'.$type;
+$url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 ?>
 
 
@@ -65,7 +68,8 @@ $target='?'.$type;
 		<div class="panel panel-<?=$panel_class(isset($status)?$status:'')?>">
 		  <div class="panel-heading"><?=$title?></div>
 		  <div class="panel-body">
-		   <?php echo form_open_multipart($this->uri->uri_string().$target); ?>
+		   <?php echo form_open_multipart($url); ?>
+		    <div class="col-md-12"><?=(isset($_SESSION['insert_success']))?'Produk Berhasil Di input.':''?></div>
 		    <div class="col-md-5">
 		    <?php echo validation_errors(); ?>
 		   		<table class="table">
@@ -99,23 +103,23 @@ $target='?'.$type;
 		   			<tr>
 		   				<td id="no-border" colspan="2">
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image1">
+		   						<img src="<?=!empty($image1)?$image1:base_url('assets/images/no-image.png')?>" width="60px" id="image1">
 		   						<?=form_upload('image1','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image2">
+		   						<img src="<?=!empty($image2)?$image2:base_url('assets/images/no-image.png')?>" width="60px" id="image2">
 		   						<?=form_upload('image2','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image3">
+		   						<img src="<?=!empty($image3)?$image3:base_url('assets/images/no-image.png')?>" width="60px" id="image3">
 		   						<?=form_upload('image3','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image4">
+		   						<img src="<?=!empty($image4)?$image4:base_url('assets/images/no-image.png')?>" width="60px" id="image4">
 		   						<?=form_upload('image4','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=base_url('assets/images/no-image.png')?>" width="60px" id="image5">
+		   						<img src="<?=!empty($image5)?$image5:base_url('assets/images/no-image.png')?>" width="60px" id="image5">
 		   						<?=form_upload('image5','','class="ts-upload"')?>
 		   					</div>
 		   					<script type="text/javascript">
@@ -139,15 +143,17 @@ $target='?'.$type;
 		   			<tr>
 		   				<th>ManualBook</th>
 		   				<td>
-		   					<input type="file" name="buku_panduan" accept=".pdf,.zip,.rar,.gz">
+		   					<?= form_upload("buku_panduan",'','class="form-control" accept=".pdf"');?>
 		   					<span id="helpBlock" class="help-block ts-help">Only *.PDF or Compressed file</span>
+		   					<?=isset($manualbook)?'<p>Current File: '.$manualbook.'</p>':''?>
 		   				</td>
 		   			</tr>
 		   			<tr>
 		   				<th>File</th>
 		   				<td>
-		   					<input type="file" name="software" accept=".pdf,.zip,.rar,.gz">
+		   					<input type="file" name="file_software" accept=".zip,.rar,.gz" class="form-control">
 		   					<span id="helpBlock" class="help-block ts-help">Only *.PDF or Compressed file</span>
+		   					<?=isset($file_software)?'<p>Current File: '.$file_software.'</p>':''?>
 		   				</td>
 		   			</tr>
 		   			<!--Deskripsi Produk-->
@@ -164,13 +170,19 @@ $target='?'.$type;
 		   			<script type="text/javascript">
 		   			$(document).ready(function(){
 		   				tinymce.init({
-						  selector: 'textarea',  // change this value according to your HTML
+						  selector: '#deskripsi_prd',  // change this value according to your HTML
 						    width: '100%',
-						    height: 300
+						    height: 200
 
 						});
 		   			});
 		   			</script>
+		   		<h3>Meta Fields</h3>
+		   		<label>Keywords</label>
+		   		<input type="text" name="meta[keywords]" class="form-control" placeholder="keyword1,keyword2,..." value="<?=isset($meta['keywords'])?$meta['keywords']:''?>">
+
+		   		<label>Description</label>
+		   		<textarea type="text" name="meta[description]" class="form-control" style="height: 100px" placeholder="max 160 karakter" maxlength="160"><?=isset($meta['description'])?$meta['description']:''?></textarea>
 		    </div>
 		    <div class="col-md-4" style="margin-top:30px;">
 		    	<input class="btn btn-primary" type="submit" value="Simpan"/>

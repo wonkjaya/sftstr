@@ -8,7 +8,7 @@ class Model_software extends CI_Model {
 		//query semua record di table products
 		$this->db->limit(10);
 		$this->db->select(['dp.ID','dp.kode_produk','dp.nama_produk','dp.harga_jual','gp.image1','dp.slug as nama_slug']);
-		$this->db->join('produk_gambar gp','gp.id_product=dp.ID');
+		$this->db->join('produk_gambar gp','gp.id_produk=dp.ID');
 		$hasil = $this->db->get('produk_data dp');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
