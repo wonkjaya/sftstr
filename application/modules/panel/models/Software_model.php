@@ -29,7 +29,7 @@ class Software_model extends CI_Model {
 
 	function get_product(){
 		if(isset($_GET['id'])){
-			//$this->db->limit(1);
+			$this->db->limit(1);
 			$this->db->where('pd.ID',$_GET['id']);
 			$this->db->select(['pd.*','mt.key_meta','mt.value','dsc.deskripsi_produk','dsc.manual_book','pg.image1','pg.image2','pg.image3','pg.image4','pg.image5']);
 			$this->db->join('produk_meta mt','mt.id_produk=pd.ID');
@@ -171,6 +171,7 @@ class Software_model extends CI_Model {
 
 	function get_id_user($username=''){
 		$username=!empty($username)?$usename:$this->session->userdata('username');
+		$this->db->limit(1);
 		$this->db->select('ID');
 		$this->db->where('user_email',$username);
 		$q=$this->db->get('users');
@@ -258,27 +259,30 @@ class Software_model extends CI_Model {
 
 # UPLOAD ZONE
 
-	function upload_file_software($update=false){ // UPLOAD FILE SOFTWARE
+	function upload_file_software($filename=''){ // UPLOAD FILE SOFTWARE
         unset($config);
     	$username=$this->session->userdata('username');
 		$config['upload_path']          = FCPATH.'/uploads/software/file-software/';
-    	$config['file_name']			= 'software-'.time();
+    	$config['file_name']			= (!empty($filename)?$filename:'software-'.time());
         $config['allowed_types']        = 'zip|rar|tar.gz';
         $config['overwrite']			= true;
         //$config['max_size']             = 12000;
-        
-        $this->load->library('upload', $config);
-        if ($this->upload->do_upload('file_software')){
-        	$data=$this->upload->data();
-        	return $data['file_name'];
-        }else{
-            $error = $this->upload->display_errors();
-            die('file_software : '.$error);
-        }
+        if(!empty($_FILES['file_software']['tmp_name'])){
+	        $this->load->library('upload', $config);
+	        if ($this->upload->do_upload('file_software')){
+	        	$data=$this->upload->data();
+	        	return $data['file_name'];
+	        }else{
+	            $error = $this->upload->display_errors();
+	            die('file_software : '.$error);
+	        }
+	    }else{
+	    	return $filename;
+	    }
         $config=null;
 	}
 
-	function upload_gambar($update=false){
+	function upload_gambar($images=''){
         unset($config);
         //echo '# upload_gambar'.br();
 		$config['upload_path']          = FCPATH.'/uploads/software/file-images/';
@@ -292,13 +296,15 @@ class Software_model extends CI_Model {
         //$time=date('ymdgis');
         $files=array();
         $time=time();
+        $i=1;
+       // print_r($images);
         foreach($imagename as $image){
-        	$config['file_name']=$image.'-'.$time;
+        	$config['file_name']=isset($images[$image])?$images[$image]:$image.'-'.$time;
         	$config['reset']=true;
         	$this->load->library('upload');
         	$this->upload->initialize($config);
 
-        	if($_FILES[$image] != ''):
+        	if($_FILES[$image]['tmp_name'] != ''):
 		        if ( ! $this->upload->do_upload($image)) // gambar berbentuk array
 		        {
 		            $error = array('error' => $this->upload->display_errors());
@@ -308,7 +314,11 @@ class Software_model extends CI_Model {
 		        	array_push($files, $data['file_name']);
 		        	//print_r($data);
 		        }
+		    else:
+		        array_push($files, $images['image'.$i]);
+
 		    endif;
+		    $i++;
         }
         $config=null;
         return $files;
@@ -323,7 +333,7 @@ class Software_model extends CI_Model {
         //$config['max_size']             = 3000; // 3MB
         //$time=date('ymdgis');
         $config['file_name']=(!empty($manual_book))?$manual_book:'manual_book-'.time();
-        if(!empty($_FILES['buku_panduan'])){
+        if(!empty($_FILES['buku_panduan']['tmp_name'])){
 	        $this->load->library('upload');
 	        $this->upload->initialize($config);
 	        if ( ! $this->upload->do_upload('buku_panduan')) // file manual
@@ -345,6 +355,8 @@ class Software_model extends CI_Model {
 	function update_product(){
 		if($_POST){
 			// id produk
+			//print_r($_SESSION);
+			//print_r($_FILES);
 			$id_produk=$this->session->flashdata('id_produk');
 			if(!empty($id_produk)){
 				$this->db->select(['pdt.ID','url_demo','manual_book','image1','image2','image3','image4','image5']);
@@ -366,6 +378,8 @@ class Software_model extends CI_Model {
 					$images['image4']=$row->image4;
 					$images['image5']=$row->image5;
 				}
+			}else{
+				exit('data tidak cocok!');
 			}
 			
 			$this->load->library('form_validation');
@@ -388,8 +402,8 @@ class Software_model extends CI_Model {
 			$produk['diskon']=$this->input->post('diskon');
 			$deskripsi['deskripsi_produk']=$this->input->post('deskripsi_prd');
 			//$deskripsi_dev=$this->input->post('deskripsi_dev');
-			$meta['keywords']=$this->input->post('keywords');
-			$meta['deskripsi']=$this->input->post('description');
+			$meta['keywords']=$this->input->post('meta')['keywords'];
+			$meta['description']=$this->input->post('meta')['description'];
 			// upload files
 			$produk['url_demo']=$this->upload_file_software($url_demo);
 			// insert new deskripsi
@@ -416,16 +430,23 @@ class Software_model extends CI_Model {
 			}
 			// update gambar
 			if(is_array($gambar)){
-				$this->db->where('id_produk',$id_produk);
-				$this->db->update('produk_gambar',$gambar);
+				$i=1;
+				foreach($gambar['images'] as $key=>$val){
+					$data['image'.$i]=$val;
+					$i++;
+				}
+					$this->db->where('id_produk',$id_produk);
+					$this->db->update('produk_gambar',$data);
 			}
 			// update meta
+			//print_r($meta);
 			if(is_array($meta)){
 				foreach ($meta as $key => $value) {
-					$this->db->where(['id_produk'=>$id_produk,'meta_key'=>$key]);
+					$this->db->where(['id_produk'=>$id_produk,'key_meta'=>$key]);
 					$this->db->update('produk_meta',['value'=>$value]);
 				}
 			}
+			redirect('panel/software/products/');
 		}
 
 	}

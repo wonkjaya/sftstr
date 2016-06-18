@@ -1,15 +1,17 @@
 <?php
+if(isset($_GET['id']) and isset($_GET['detail'])) $this->session->set_flashdata('id_produk',$_GET['id']);
+
 $kodePrd='';$slug='';$namaPrd='';$kategori='';$hargaBeli='';$hargaJual='';$url_demo='';$diskon=0;
 // META
 $metaName='';$metaTag='';$metaDeskription='';
 // DESKRIPSI
 $deskripsi_prd='';//$deskripsi_dev='';
 // IMAGE
-$image1='';$image2='';$image3='';$image4='';
+$image1='';$image2='';$image3='';$image4='';$image5='';
 
 $status='empty';
 if(isset($products)){
-	$url_action='software/product?update';
+	$url_action='panel/software/products?update';
 	foreach($products as $prd){//print_r($prd);
 		if($i=1){
 			$kodePrd=$prd->kode_produk;
@@ -32,6 +34,7 @@ if(isset($products)){
 			$image2=$path_image.$prd->image2;
 			$image3=$path_image.$prd->image3;
 			$image4=$path_image.$prd->image4;
+			$image5=$path_image.$prd->image5;
 		}
 		// META
 		$meta[$prd->key_meta]=$prd->value;
