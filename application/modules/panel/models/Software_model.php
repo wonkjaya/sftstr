@@ -22,14 +22,28 @@ class Software_model extends CI_Model {
 	function get_product_list(){
 		$page=($this->uri->segment(2) > 0)?$this->uri->segment(2):0;
 		$this->db->limit(20,$page);
-		$this->db->select(['ID','id_user','kode_produk','nama_produk','harga_jual']);
+		if(isset($_GET['cat'])){
+			if($_GET['cat'] != '')$this->db->where('produk_kategori.name',str_replace('-',' ',$_GET['cat']));
+		}
+		if(isset($_GET['user'])){
+			if($_GET['user'] != '')$this->db->where('users.ID',$_GET['user']);
+		}
+		if(isset($_GET['type'])){
+			$status=($_GET['type']==0?0:1);
+		}else{
+			$status=1;
+		}
+		$this->db->where('produk_data.status',$status);
+		$this->db->select(['produk_data.ID','id_user','user_email','kode_produk','nama_produk','harga_jual','diskon','produk_kategori.name as kategori','produk_data.status']);
+		$this->db->join('users','users.ID=produk_data.id_user','left');
+		$this->db->join('produk_kategori','produk_kategori.ID=produk_data.id_kategori','left');
 		$q=$this->db->get('produk_data');
 		if($q->num_rows() > 0)return $q->result();
 	}
 
 	function get_product(){
 		if(isset($_GET['id'])){
-			$this->db->limit(1);
+			$this->db->limit(10); // jika dilimit 1 maka hasilnya kurang lengkap
 			$this->db->where('pd.ID',$_GET['id']);
 			$this->db->select(['pd.*','mt.key_meta','mt.value','dsc.deskripsi_produk','dsc.manual_book','pg.image1','pg.image2','pg.image3','pg.image4','pg.image5']);
 			$this->db->join('produk_meta mt','mt.id_produk=pd.ID');
@@ -89,11 +103,16 @@ class Software_model extends CI_Model {
 
 	function get_user(){
 		$id=0;
-		if($_GET['id'])$id=$_GET['id'];
-		$this->db->where('u.ID',$id);
-		$this->db->limit(1);
-		$this->db->select(['u.ID','u.user_email as email','u.user_registered_date as dibuat','u.user_level as level','u.user_status','ud.id_ktp','ud.nama_lengkap','ud.alamat','ud.jenis_kelamin','ud.nomor_telp']);
-		$this->db->join('user_detail ud','ud.id_user=u.ID','left');
+		if(isset($_GET['id']))$id=$_GET['id'];
+		if($id > 0){
+			$this->db->where('u.ID',$id);
+			$this->db->limit(1);
+			$this->db->select(['u.ID','u.user_email as email','u.user_registered_date as dibuat','u.user_level as level','u.user_status','ud.id_ktp','ud.nama_lengkap','ud.alamat','ud.jenis_kelamin','ud.nomor_telp']);
+			$this->db->join('user_detail ud','ud.id_user=u.ID','left');
+		}else{
+			$this->db->select(['ID','user_email']);
+			$this->db->where('user_status',1);
+		}
 		$q=$this->db->get('users u');
 		if($q->num_rows() > 0){
 			return $q->result();
@@ -449,6 +468,27 @@ class Software_model extends CI_Model {
 			redirect('panel/software/products/');
 		}
 
+	}
+// END UPDATE
+
+	function trash_product(){
+		if($_GET['id']){
+			$id=$_GET['id'];
+			$this->db->where('ID',$id);
+			$this->db->update('produk_data',['status'=>'0']);
+		}
+		redirect(ADMIN_SOFTWARE.'/products');
+	}
+
+	function delete_product(){
+		$id=isset($_GET['id'])?$_GET['id']:'';
+		if(!empty($id)){
+			$this->db->where('ID',$id);
+			$this->db->delete('produk_data');
+			$this->load->library('user_agent');
+			redirect($this->agent->referrer());
+		}
+		die('id_tidak boleh kosong');
 	}
 
 }

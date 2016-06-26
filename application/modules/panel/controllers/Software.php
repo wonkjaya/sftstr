@@ -44,13 +44,18 @@ class Software extends CI_Controller {
 			$data['data']=array(
 				'categories'=>$this->model->get_categories()
 			);
+		}elseif(isset($_GET['trash'])){
+			$this->model->trash_product($single=true);
+		}elseif(isset($_GET['delete'])){
+			$this->model->delete_product();
 		}else{
 			$data['data_content']='Product_list';
 			$data['data']=array(
 				'products'=>$this->model->get_product_list(),
 				'pagging'=>$this->set_pagging($this->model->get_total_products(),'product_list')
 			);
-			$data['cats']=$this->model->get_categories($is_user=true); // filter by user
+			$data['cats']=$this->model->get_categories($is_user=false); // not filter by user
+			$data['users']=$this->model->get_user(); // filter by user
 			$this->load->helper('form');
 		}
 		$data['aktif_menu']=2; //products
@@ -76,7 +81,8 @@ class Software extends CI_Controller {
 		}elseif(isset($_GET['delete'])){
 			$this->model->delete_user_permanent();
 		}else{
-			$data['data_content']='Users';
+			$this->load->helper('form');
+			$data['data_content']='User_list';
 			$data['data']=array(
 				'users'=>$this->model->get_user_list(),
 				'pagging'=>$this->set_pagging($this->model->get_total_users(),'users')

@@ -11,7 +11,7 @@ $image1='';$image2='';$image3='';$image4='';$image5='';
 
 $status='empty';
 if(isset($products)){
-	$url_action='panel/software/products?update';
+	$url_action=ADMIN_SOFTWARE.'/products?update';
 	foreach($products as $prd){//print_r($prd);
 		if($i=1){
 			$kodePrd=$prd->kode_produk;
@@ -58,7 +58,7 @@ $categories_array=function ($categories){
 $title=(isset($_GET['addnew']))?'Produk Baru':(isset($_GET['detail'])?'Produk Detail':'Title');
 $type=isset($_GET['addnew'])?'addnew':(isset($_GET['detail'])?'update':'');
 $id=isset($_GET['id'])?'&id='.$_GET['id']:'';
-$button_trash=isset($_GET['addnew'])?'<a href="'.site_url('produckk_list?trash').'" class="btn btn-danger">Trash</a>':'';
+$button_trash=isset($_GET['detail'])?'<a href="'.site_url(ADMIN_SOFTWARE.'products?trash').'" class="btn btn-danger">Trash</a>':'';
 $panel_class=function($status=''){
 					return ($status == 1 || $status=='empty')?'primary':'danger';
 			};
@@ -191,9 +191,9 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		    	<input class="btn btn-primary" type="submit" value="Simpan"/>
 
 				<div class="btn-group" style="float:right;margin-right:50px">
-					<input class="btn btn-warning" type="reset" value="Reset"/>
+					<input class="btn btn-default" type="reset" value="Reset"/>
 
-					<a href="#" class="btn btn-danger" onclick="history.back()">Batal</a>
+					<a href="#" class="btn btn-warning" onclick="history.back()">Batal</a>
 					<?php
 						echo $button_trash;
 					?>

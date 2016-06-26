@@ -7,29 +7,8 @@
 		  	<div class="col-md-12" style="margin-bottom:20px">
 				<form class="form-inline" method="GET">
 				  <div class="form-group">
-				    <label for="exampleInputName2">Filter :</label>
-				    <?php 
-				    	if(isset($users)){
-				    		foreach($users as $user){
-				    			$user_list[$user->ID]=explode('@',$user->user_email)[0];
-				    		}
-				    	}
-				    	echo form_dropdown('user',$user_list,isset($_GET['user'])?$_GET['user']:'','class="form-control"');?>
-				  </div>
-				  <div class="form-group">
 				    <label for="exampleInputName2"></label>
 				    <?php echo form_dropdown('type',[''=>'type','1'=>'aktif','0'=>'trash'],isset($_GET['type'])?$_GET['type']:'','class="form-control"');?>
-				  </div>
-				  <div class="form-group">
-				    <?php 
-				    if(isset($cats)){//print_r($cats);
-				    	$kategori['']='kategori';
-				    	foreach($cats as $cat){
-				    		$slug=strtolower(str_replace(' ','-',$cat->name));
-				    		$kategori[$slug]=$cat->name;
-				    	}
-				    }
-				    echo form_dropdown('cat',$kategori,isset($_GET['cat'])?$_GET['cat']:'','class="form-control"');?>
 				  </div>
 				  <div class="form-group">
 				  	
