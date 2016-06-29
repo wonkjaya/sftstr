@@ -66,13 +66,13 @@ class Software extends CI_Controller {
 		$this->model->save_user();
 		if(isset($_GET['detail'])){
 			$this->load->helper('form');
-			$data['data_content']='User_detail';
+			$data['data_content']='User_form';
 			$data['data']=array(
 				'user'=>$this->model->get_user(),
 			);
-		}elseif(isset($_GET['addnew'])){
+		}elseif(isset($_GET['add_new'])){
 			$this->load->helper('form');
-			$data['data_content']='User_detail';
+			$data['data_content']='User_form';
 			$data['data']=array(
 				'title'=>'Add New',
 			);

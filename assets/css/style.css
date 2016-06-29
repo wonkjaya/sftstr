@@ -39,11 +39,32 @@
     filter: alpha(opacity=0);
 	padding:10px 5px;
 }
+.ts-upload-picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+	padding:30px 5px;
+}
 .ts-image-preview{
 	margin-left: 10px;
 	border:1px solid #C5C5C5;
 	width:60px;
 	height: 60px;
+	float:left;
+	position: relative;
+    overflow: hidden;
+}
+.ts-image-profile{
+	margin-left: 10px;
+	border:1px solid #C5C5C5;
+	width:150px;
+	height: 145px;
 	float:left;
 	position: relative;
     overflow: hidden;
