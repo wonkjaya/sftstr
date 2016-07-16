@@ -30,10 +30,8 @@ class Software_model extends CI_Model {
 		}
 		if(isset($_GET['type'])){
 			$status=($_GET['type']==0?0:1);
-		}else{
-			$status=1;
 		}
-		$this->db->where('produk_data.status',$status);
+		if(isset($status))$this->db->where('produk_data.status',$status);
 		$this->db->select(['produk_data.ID','id_user','user_email','kode_produk','nama_produk','harga_jual','diskon','produk_kategori.name as kategori','produk_data.status']);
 		$this->db->join('users','users.ID=produk_data.id_user','left');
 		$this->db->join('produk_kategori','produk_kategori.ID=produk_data.id_kategori','left');
@@ -220,22 +218,22 @@ class Software_model extends CI_Model {
 			//$harga_beli_produk=$this->input->post('hargaBeli');
 			$produk['harga_jual']=$this->input->post('hargaJual');
 			$produk['diskon']=$this->input->post('diskon');
-			$data['deskripsi_produk']=$this->input->post('deskripsi_prd');
 			//$deskripsi_dev=$this->input->post('deskripsi_dev');
 			// upload files
 			$produk['url_demo']=$this->upload_file_software();
 			// insert produk
 			$id_produk=$this->insert_produk($produk);
-			// insert new deskripsi
-			$data['manual_book']=$this->upload_manual_book();
-			$this->insert_description($id_produk,$data);
-			// meta
-			$this->insert_meta($id_produk);
-			// update produk
-			//$this->update_produk($id_produk,$data);
 			// insert images
 			$images=$this->upload_gambar(); 
 			$this->insert_images($id_produk,$images);
+			// insert new deskripsi
+			$deskripsi['deskripsi_produk']=$this->input->post('deskripsi_prd');
+			$deskripsi['manual_book']=$this->upload_manual_book();
+			$this->insert_description($id_produk,$deskripsi);
+			// meta
+			$data['id_meta']=$this->insert_meta($id_produk);
+			// update produk
+			//$this->update_produk($id_produk,$data);
 		redirect('panel/software/products?addnew') ;
 		}
 	}
@@ -282,7 +280,8 @@ class Software_model extends CI_Model {
 # UPLOAD ZONE
 
 	function upload_profile_picture(){
-		$config['upload_path']          = FCPATH.'/uploads/profile_pic/';
+			$config=array();
+				$config['upload_path']          = FCPATH.'/uploads/profile_pic/';
         $config['allowed_types']        = 'jpg|png|jpeg';
         $config['max_size']             = 400; ///400kB
         $config['max_width']            = 1024; //1024px
@@ -300,9 +299,9 @@ class Software_model extends CI_Model {
 	}
 
 	function upload_file_software($filename=''){ // UPLOAD FILE SOFTWARE
-        unset($config);
+      unset($config);
     	$username=$this->session->userdata('username');
-		$config['upload_path']          = FCPATH.'/uploads/software/file-software/';
+			$config['upload_path']          = FCPATH.'/uploads/software/file-software/';
     	$config['file_name']			= (!empty($filename)?$filename:'software-'.time());
         $config['allowed_types']        = 'zip|rar|tar.gz';
         $config['overwrite']			= true;
@@ -324,8 +323,9 @@ class Software_model extends CI_Model {
 
 	function upload_gambar($images=''){
         unset($config);
+        $config=array();
         //echo '# upload_gambar'.br();
-		$config['upload_path']          = FCPATH.'/uploads/software/file-images/';
+				$config['upload_path']          = FCPATH.'/uploads/software/file-images/';
         $config['allowed_types']        = 'jpg|png|jpeg';
         $config['max_size']             = 100; ///100kB
         $config['max_width']            = 1024; //1024px
@@ -365,11 +365,11 @@ class Software_model extends CI_Model {
 	}
 
 	function upload_manual_book($manual_book=''){ // UPLOAD FILE PDF
-        unset($config);
+        unset($config);$config=array();
         //echo '# manual_book'.br();
-		$config['upload_path']          = FCPATH.'/uploads/software/file-books/';
+				$config['upload_path']          = FCPATH.'uploads/software/file-books/';
         $config['allowed_types']        = 'pdf|zip|rar|tar.gz';
-        $config['overwrite']			= true;
+        $config['overwrite']						= true;
         //$config['max_size']             = 3000; // 3MB
         //$time=date('ymdgis');
         $config['file_name']=(!empty($manual_book))?$manual_book:'manual_book-'.time();
@@ -380,6 +380,7 @@ class Software_model extends CI_Model {
 	        {
 	        	//print_r($_FILES['buku_panduan']);
 	            $error = $this->upload->display_errors();
+	            print_r($_FILES['buku_panduan']);
 	            die('buku_panduan : '.$error);
 	        }else{
 	        	$data=$this->upload->data();
