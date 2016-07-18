@@ -10,6 +10,7 @@ if(isset($_GET['id']) and isset($_GET['detail'])) $this->session->set_flashdata(
 	$jenis_kelamin='';
 	$nomor_telp='';
 	$password='';
+	$profile_pic='';
 	$status=1;
 
 if(isset($user)){
@@ -26,7 +27,8 @@ if(isset($user)){
 			$alamat=$usr->alamat;
 			$jenis_kelamin=$usr->jenis_kelamin;
 			$nomor_telp=$usr->nomor_telp;
-			$password=$usr->password;
+			$password=$usr->user_pass;
+			$profile_pic=$usr->profile_pic;
 			$status=0;
 		}
 	}
@@ -82,7 +84,9 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   			</tr>
 		   			<tr>
 		   				<th>Password</th>
-		   				<td id="no-border"><?=form_input('password',$password,'class="form-control"')?></td>
+		   				<td id="no-border"><?=form_input('password','','class="form-control"')?>
+		   				<p class="">kosongi jika tidak diubah</p>
+		   				</td>
 		   			</tr>
 	   			</table>
    			</div>
@@ -98,7 +102,7 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   			<tr>
 		   				<td id="no-border" colspan="2">
 		   					<div class="img-rounded ts-image-profile">
-		   						<img src="<?=!empty($image_profile)?$image_profile:base_url('assets/images/no-image.png')?>" width="150px" id="image_profile">
+		   						<img src="<?=!empty($profile_pic)?base_url('uploads/profile_pic/'.$profile_pic):base_url('assets/images/no-image.png')?>" width="150px" id="image_profile">
 		   						<?=form_upload('image_profile','','class="ts-upload-picture"')?>
 		   					</div>
 		   					<script type="text/javascript">

@@ -65,12 +65,13 @@ class Software extends CI_Controller {
 	function users(){
 		$this->model->save_user();
 		if(isset($_GET['detail'])){
+			if(isset($_GET['id'])) $this->session->set_flashdata('id_user',$_GET['id']);
 			$this->load->helper('form');
 			$data['data_content']='User_form';
 			$data['data']=array(
 				'user'=>$this->model->get_user(),
 			);
-		}elseif(isset($_GET['add_new'])){
+		}elseif(isset($_GET['addnew'])){
 			$this->load->helper('form');
 			$data['data_content']='User_form';
 			$data['data']=array(

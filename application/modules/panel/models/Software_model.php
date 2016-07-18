@@ -81,14 +81,15 @@ class Software_model extends CI_Model {
 	function get_user_list(){
 		$page=($this->uri->segment(2) > 0)?$this->uri->segment(2):0;
 		$this->db->limit(20,$page);
-		$type=isset($_GET['type'])?$_GET['type']:0;
-		if(isset($_GET['aktif']) OR $type==1){
-			$this->db->where('u.user_status','1'); // active
-		}else{
-			$this->db->where('u.user_status','0'); // nonaktif
+		if(isset($_GET['type'])){
+			if(!empty($_GET['type']) and $_GET['type'] !== 'all'){
+				$type=$_GET['type'];
+			}
 		}
-		$this->db->where('user_email <>',ts_get_username());
-		$this->db->where('user_status <>','00');
+		
+		if(isset($type))$this->db->where('u.user_status',$type); // active
+		$this->db->where('u.user_email <>',ts_get_username());
+		$this->db->where('u.user_level <>','00');
 		$this->db->select(['u.ID','u.user_status','user_email','nama_lengkap','user_registered_date','nomor_telp']);
 		$this->db->join('user_detail ud','ud.id_user=u.ID','left');
 		$q=$this->db->get('users u');
@@ -107,7 +108,21 @@ class Software_model extends CI_Model {
 		if($id > 0){
 			$this->db->where('u.ID',$id);
 			$this->db->limit(1);
-			$this->db->select(['u.ID','u.user_email as email','u.user_registered_date as dibuat','u.user_level as level','u.user_status','ud.id_ktp','ud.nama_lengkap','ud.alamat','ud.jenis_kelamin','ud.nomor_telp','u.user_registered_date']);
+			$this->db->select([
+				'u.ID',
+				'u.user_email as email',
+				'u.user_pass',
+				'u.user_registered_date as dibuat',
+				'u.user_level as level',
+				'u.user_status',
+				'ud.id_ktp',
+				'ud.nama_lengkap',
+				'ud.alamat',
+				'ud.jenis_kelamin',
+				'ud.nomor_telp',
+				'ud.profile_pic',
+				'u.user_registered_date'
+			]);
 			$this->db->join('user_detail ud','ud.id_user=u.ID','left');
 		}else{
 			$this->db->select(['ID','user_email']);
@@ -136,7 +151,7 @@ class Software_model extends CI_Model {
 	}
 
 	function save_user(){
-		$id_user=(isset($_GET['id']))?$this->input->get('id'):'';
+		$id_user=(isset($_GET['id']))?$this->input->get('id'):$this->session->flashdata('id_user');
 		if(isset($_GET['restore']))$this->restore($id_user); // hanya jika restore
 		if($_POST){// print_r($_POST);exit;
 			$noktp=$this->input->post('ktp');
@@ -147,7 +162,7 @@ class Software_model extends CI_Model {
 			$jenis_kelamin=$this->input->post('jenis_kelamin');
 			$level=$this->input->post('level');
 			$password=$this->input->post('password');
-			$file_gambar=$this->upload_profile_picture();
+			$file_gambar=(!empty($_FILES['tmp_name']))?$this->upload_profile_picture():'';
 			$data_detail=[
 				'id_ktp'=>$noktp,
 				'nama_lengkap'=>$nama,
@@ -155,6 +170,9 @@ class Software_model extends CI_Model {
 				'alamat'=>$alamat,
 				'jenis_kelamin'=>$jenis_kelamin,
 			];
+			if(!empty($file_gambar)){
+				$data_gambar['profile_pic']=$file_gambar;
+			}
 			$data_user=['user_email'=>$email,'user_level'=>$level];
 			if($password !== ''){
 				$data_user['user_pass']=md5($password);

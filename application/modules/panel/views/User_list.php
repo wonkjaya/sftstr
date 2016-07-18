@@ -1,14 +1,14 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 		  <div class="panel-heading">Data User 
-		  <div class="pull-right"><?=anchor(ADMIN_SOFTWARE.'/users?add_new','Add New')?></div>
+		  <div class="pull-right"><?=anchor(ADMIN_SOFTWARE.'/users?addnew','Add New')?></div>
 		  </div>
 		  <div class="panel-body">
 		  	<div class="col-md-12" style="margin-bottom:20px">
 				<form class="form-inline" method="GET">
 				  <div class="form-group">
 				    <label for="exampleInputName2"></label>
-				    <?php echo form_dropdown('type',[''=>'type','1'=>'aktif','0'=>'nonaktif','2'=>'trash'],isset($_GET['type'])?$_GET['type']:'','class="form-control"');?>
+				    <?php echo form_dropdown('type',['all'=>'All','1'=>'aktif','0'=>'nonaktif','2'=>'trash'],isset($_GET['type'])?$_GET['type']:'','class="form-control"');?>
 				  </div>
 				  <div class="form-group">
 				  	
