@@ -24,7 +24,7 @@
     			<?=anchor('welcome/cart', $text_cart_url)?>
     		</li>
 		<?php if($this->session->userdata('username')) { ?>
-			<li><div style="line-height:50px;">You Are : <?=$this->session->userdata('username')?></div></li>
+			<li><?=anchor('panel/software','['.$this->session->userdata('username').']')?></li>
 			<li><?php echo anchor('logout', 'Logout');?></li>
 		<?php } else { ?>
 			<li><?php echo anchor('login', 'Login');?></li>

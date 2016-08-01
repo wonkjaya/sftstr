@@ -2,8 +2,7 @@
 
 class Software_model extends CI_Model {
 
-	public function check_credential()
-	{
+	public function check_credential(){
 		$email = set_value('email');
 		$password = set_value('password');
 		
@@ -370,14 +369,14 @@ class Software_model extends CI_Model {
 		        }else{
 		        	$data=$this->upload->data();
 		        	array_push($files, $data['file_name']);
-		        	//print_r($data);
 		        }
 		    else:
-		        array_push($files, $images['image'.$i]);
+		        array_push($files, '');
 
 		    endif;
 		    $i++;
         }
+        print_r($files);//exit;
         $config=null;
         return $files;
 	}
@@ -529,6 +528,22 @@ class Software_model extends CI_Model {
 			redirect($this->agent->referrer());
 		}
 		die('id_tidak boleh kosong');
+	}
+	
+	function pilih_user_terbaru($limit){
+		$this->db->limit($limit);
+		$this->db->order_by('user_registered_date DESC');
+		$this->db->select(['u.ID','u.user_email as email','if(u.user_level = "00","Admin",if(u.user_level = "01","Developer",if(u.user_level = "03","Editor","User"))) as level','u.user_registered_date as created','u.user_status as status']);
+		$q=$this->db->get('users u');
+		if($q->num_rows() > 0) return $q->result();
+	}
+	
+	function pilih_produk_terbaru($limit){
+		$this->db->limit($limit);
+		$this->db->order_by('created DESC');
+		$this->db->select(['p.ID','p.kode_produk as kode','p.nama_produk as nama','p.created']);
+		$q=$this->db->get('produk_data p');
+		if($q->num_rows() > 0) return $q->result();
 	}
 
 }

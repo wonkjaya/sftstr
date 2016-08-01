@@ -28,7 +28,7 @@
 						'style'		=> 'max-width: 100%; max-height:100%; height:150px'
 					  ])?>
 					  <div class="caption row">
-						<p class="col-md-12" style="font-size:20px;"><?=$product->nama_produk?></p>
+						<p class="col-md-12" style="font-size:20px;"><?=substr($product->nama_produk,0,17)?></p>
 						<p class="col-md-5" style="color:#DACECE;font-size:12px;"><?=$product->kode_produk?></p>
 						<p class="col-md-7" style="color:#DACECE;font-size:12px;">Rp. <?=number_format($product->harga_jual,0)?></p>
 						<p class="col-md-12">

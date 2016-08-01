@@ -21,7 +21,8 @@ class Software extends CI_Controller {
 	function dashboard(){
 		$data['data_content']='Dashboard';
 		$data['data']=array(
-			'tes'=>'tes'
+			'produkTerbaru'=>$this->model->pilih_produk_terbaru(5), // limit 5,
+			'userTerbaru'=>$this->model->pilih_user_terbaru(5), // limit 5
 		);
 		$data['aktif_menu']=1; //dashboard
 		$this->load->view('Index',$data);

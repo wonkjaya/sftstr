@@ -36,7 +36,7 @@ if(isset($user)){
 }
 
 
-$title=(isset($_GET['add_new']))?'User Baru':(isset($_GET['detail'])?'User Detail':'Title');
+$title=(isset($_GET['addnew']))?'User Baru':(isset($_GET['detail'])?'User Detail':'Title Not Set');
 $type=isset($_GET['add_new'])?'add_new':(isset($_GET['detail'])?'update':'');
 $id=isset($_GET['id'])?'&id='.$_GET['id']:'';
 $button_trash=isset($_GET['detail'])?'<a href="'.site_url(ADMIN_SOFTWARE.'products?trash').'" class="btn btn-danger">Trash</a>':'';
@@ -44,12 +44,12 @@ $panel_class=function($status=''){
 					return ($status == 1 || $status=='empty')?'primary':'danger';
 			};
 $target='?'.$type;
-$button_submit_title=isset($_GET['add_new'])?'Save':(isset($_GET['detail'])?'Update':'');
+$button_submit_title=isset($_GET['addnew'])?'Publish':(isset($_GET['detail'])?'Update':'');
 $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 ?>
 
 
-	<div class="col-md-12">
+	<div class="col-md-10">
 		<div class="panel panel-<?=$panel_class(isset($status)?$status:'')?>">
 		  <div class="panel-heading"><?=$title?></div>
 		  <div class="panel-body">
@@ -85,12 +85,12 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   			<tr>
 		   				<th>Password</th>
 		   				<td id="no-border"><?=form_input('password','','class="form-control"')?>
-		   				<p class="">kosongi jika tidak diubah</p>
+		   				<p class=""><?=(!isset($_GET['addnew']))?"kosongi jika tidak diubah":''?></p>
 		   				</td>
 		   			</tr>
 	   			</table>
    			</div>
-   			<div class="col-md-5">
+   			<div class="col-md-7">
 	   			<table class="table">
 		   			<tr>
 		   				<th>Alamat</th>

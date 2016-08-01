@@ -1,7 +1,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 		  <div class="panel-heading">Data Produk 
-		  <div class="pull-right"><?=anchor(ADMIN_SOFTWARE.'/products?add_new','Add New')?></div>
+		  <div class="pull-right"><?=anchor(ADMIN_SOFTWARE.'/products?addnew','Add New')?></div>
 		  </div>
 		  <div class="panel-body">
 		  	<div class="col-md-12" style="margin-bottom:20px">

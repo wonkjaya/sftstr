@@ -30,11 +30,11 @@ if(isset($products)){
 			$file_software=$prd->url_demo;
 			// IMAGE
 			$path_image=base_url('/uploads/software/file-images').'/';
-			$image1=$path_image.$prd->image1;
-			$image2=$path_image.$prd->image2;
-			$image3=$path_image.$prd->image3;
-			$image4=$path_image.$prd->image4;
-			$image5=$path_image.$prd->image5;
+			$image1=$prd->image1;
+			$image2=$prd->image2;
+			$image3=$prd->image3;
+			$image4=$prd->image4;
+			$image5=$prd->image5;
 		}
 		// META
 		$meta[$prd->key_meta]=$prd->value;
@@ -106,23 +106,23 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   			<tr>
 		   				<td id="no-border" colspan="2">
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=!empty($image1)?$image1:base_url('assets/images/no-image.png')?>" width="60px" id="image1">
+		   						<img src="<?=!empty($image1)?$path_image.$image1:base_url('assets/images/no-image.png')?>" width="60px" id="image1">
 		   						<?=form_upload('image1','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=!empty($image2)?$image2:base_url('assets/images/no-image.png')?>" width="60px" id="image2">
+		   						<img src="<?=!empty($image2)?$path_image.$image2:base_url('assets/images/no-image.png')?>" width="60px" id="image2">
 		   						<?=form_upload('image2','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=!empty($image3)?$image3:base_url('assets/images/no-image.png')?>" width="60px" id="image3">
+		   						<img src="<?=!empty($image3)?$path_image.$image3:base_url('assets/images/no-image.png')?>" width="60px" id="image3">
 		   						<?=form_upload('image3','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=!empty($image4)?$image4:base_url('assets/images/no-image.png')?>" width="60px" id="image4">
+		   						<img src="<?=!empty($image4)?$path_image.$image4:base_url('assets/images/no-image.png')?>" width="60px" id="image4">
 		   						<?=form_upload('image4','','class="ts-upload"')?>
 		   					</div>
 		   					<div class="img-rounded ts-image-preview">
-		   						<img src="<?=!empty($image5)?$image5:base_url('assets/images/no-image.png')?>" width="60px" id="image5">
+		   						<img src="<?=!empty($image5)?$path_image.$image5:base_url('assets/images/no-image.png')?>" width="60px" id="image5">
 		   						<?=form_upload('image5','','class="ts-upload"')?>
 		   					</div>
 		   					<script type="text/javascript">

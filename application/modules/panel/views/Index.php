@@ -5,11 +5,12 @@
 		ts_get_head(); 
 	?>
 </head>
-<body class="container-fluid">
+<body>
 	<?php 
 		$data['aktif_menu']=$aktif_menu;
 		echo ts_get_header($data);
 	?>
+<div  class="container-fluid">
 	<div class="row">
 		<!--div class="col-md-2 col-sm-4">
 			<?//=ts_get_sidebar()?>
@@ -20,6 +21,7 @@
 			?>
 		</div> <!--container-->
 	</div>
+</div>
 	<?php
 	$this->load->view('includes/footer');
 	?>
