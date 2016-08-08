@@ -20,8 +20,8 @@ class Model_software extends CI_Model {
 	function get_detail_product($slug){
 		$this->db->limit(1);
 		$this->db->select(['dp.*','gp.image1','gp.image2','gp.image3','gp.image4','dp.slug as nama_slug','dsp.deskripsi_produk as deskripsi']);
-		$this->db->join('produk_gambar gp','gp.ID=dp.id_kode_gambar');
-		$this->db->join('produk_deskripsi dsp','dsp.ID=dp.id_deskripsi');
+		$this->db->join('produk_gambar gp','gp.id_produk=dp.ID');
+		$this->db->join('produk_deskripsi dsp','dsp.id_produk=dp.ID');
 		$this->db->where('dp.slug',$slug);
 		$q=$this->db->get('produk_data dp');
 		if(isset($q->row()->ID))return $q->row();

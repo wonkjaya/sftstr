@@ -161,7 +161,8 @@ class Software_model extends CI_Model {
 			$jenis_kelamin=$this->input->post('jenis_kelamin');
 			$level=$this->input->post('level');
 			$password=$this->input->post('password');
-			$file_gambar=(!empty($_FILES['tmp_name']))?$this->upload_profile_picture():'';
+	//print_r($_FILES);
+			$file_gambar=(!empty($_FILES['image_profile']['tmp_name']))?$this->upload_profile_picture($id_user):'';
 			$data_detail=[
 				'id_ktp'=>$noktp,
 				'nama_lengkap'=>$nama,
@@ -170,7 +171,7 @@ class Software_model extends CI_Model {
 				'jenis_kelamin'=>$jenis_kelamin,
 			];
 			if(!empty($file_gambar)){
-				$data_gambar['profile_pic']=$file_gambar;
+				$data_detail['profile_pic']=$file_gambar;
 			}
 			$data_user=['user_email'=>$email,'user_level'=>$level];
 			if($password !== ''){
@@ -183,7 +184,7 @@ class Software_model extends CI_Model {
 					$this->db->where('id_user',$id_user);
 					$this->db->update('user_detail',$data_detail);
 				}
-			}elseif(isset($_GET['add_new'])){
+			}elseif(isset($_GET['addnew'])){
 				// insert into users
 				$this->db->insert('users',$data_user);
 				$id_user=$this->db->insert_id();
@@ -296,22 +297,31 @@ class Software_model extends CI_Model {
 
 # UPLOAD ZONE
 
-	function upload_profile_picture(){
+	function upload_profile_picture($id_user=''){
+			if(!empty($id_user)){
+				$this->db->where('id_user',$id_user);
+				$this->db->select('profile_pic');
+				$file_name=$this->db->get('user_detail')->row()->profile_pic;
+				$filename=str_replace(['.jpg','.png','.jpeg'],'',$file_name);
+			}else{
+				$file_name='profile-'.time();
+			}
 			$config=array();
-				$config['upload_path']          = FCPATH.'/uploads/profile_pic/';
-        $config['allowed_types']        = 'jpg|png|jpeg';
-        $config['max_size']             = 400; ///400kB
-        $config['max_width']            = 1024; //1024px
-        $config['max_height']           = 768; //768px
-        $config['file_name']			= time();
+				$config['upload_path']		= FCPATH.'/uploads/profile_pic/';
+        $config['allowed_types']	= 'jpg|png|jpeg';
+        $config['max_size']				= 400; ///400kB
+        $config['max_width']			= 1024; //1024px
+        $config['max_height']     = 768; //768px
+        $config['file_name']			= $file_name;
         $config['overwrite']			= true;
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('image_profile')){
         	$data=$this->upload->data();
+        	print_r($data);
         	return $data['file_name'];
         }else{
             $error = $this->upload->display_errors();
-            die('profile_pic : '.$error);
+            exit('profile_pic : '.$error);
         }
 	}
 

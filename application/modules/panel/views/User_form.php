@@ -37,14 +37,14 @@ if(isset($user)){
 
 
 $title=(isset($_GET['addnew']))?'User Baru':(isset($_GET['detail'])?'User Detail':'Title Not Set');
-$type=isset($_GET['add_new'])?'add_new':(isset($_GET['detail'])?'update':'');
+$type=isset($_GET['addnew'])?'addnew':(isset($_GET['detail'])?'update':'');
 $id=isset($_GET['id'])?'&id='.$_GET['id']:'';
 $button_trash=isset($_GET['detail'])?'<a href="'.site_url(ADMIN_SOFTWARE.'products?trash').'" class="btn btn-danger">Trash</a>':'';
 $panel_class=function($status=''){
 					return ($status == 1 || $status=='empty')?'primary':'danger';
 			};
 $target='?'.$type;
-$button_submit_title=isset($_GET['addnew'])?'Publish':(isset($_GET['detail'])?'Update':'');
+$button_submit_title=isset($_GET['addnew'])?'Add':(isset($_GET['detail'])?'Update':'');
 $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 ?>
 

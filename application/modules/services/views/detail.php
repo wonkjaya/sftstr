@@ -17,15 +17,50 @@
 					$ID=$product->ID;
 					$kategori_produk=(isset($product->kategori))?$product->kategori:'Tidak Ada Kategori';
 					$kode_produk=$product->kode_produk;
-					$nama_produk=$product->nama_produk;
+					$nama_produk=ucwords($product->nama_produk);
 					$harga_jual=$product->harga_jual;
 					$diskon=$product->diskon;
 					$deskripsi=$product->deskripsi;
 					$demo=(isset($product->url_demo))?$product->url_demo:'';
-					$gambar1=($product->image1 !== '')?$product->image1:'no-image.png';
-					$gambar2=($product->image2 !== '')?$product->image2:'no-image.png';
-					$gambar3=($product->image3 !== '')?$product->image3:'no-image.png';
-					$gambar4=($product->image4 !== '')?$product->image4:'no-image.png';
+					$slug=$product->nama_slug.'-jpg';
+					
+					$gambar_utama=($product->image1 !== '')?
+						base_url('img/software/'.
+							substr($product->image1,0,strpos($product->image1,'.')).'/'.
+							substr($product->image1,strpos($product->image1,'.')+1,strlen($product->image1)).'/'.
+							'195x250'.
+							$slug):
+								base_url('img/noimage/md/195x250/'.$slug);
+					
+					$gambar1=($product->image1 !== '')?
+						base_url('img/software/'.
+							substr($product->image1,0,strpos($product->image1,'.')).'/'.
+							substr($product->image1,strpos($product->image1,'.')+1,strlen($product->image1)).'/'.
+							'45x45/'.
+							$slug):
+								base_url('img/noimage/45x45/'.$slug);
+					$gambar2=($product->image2 !== '')?
+						base_url('img/software/'.
+							substr($product->image1,0,strpos($product->image1,'.')).'/'.
+							substr($product->image1,strpos($product->image1,'.')+1,strlen($product->image1)).'/'.
+							'45x45/'.
+							$slug):
+								base_url('img/noimage/45x45/'.$slug);
+					$gambar3=($product->image3 !== '')?
+						base_url('img/software/'.
+							substr($product->image1,0,strpos($product->image1,'.')).'/'.
+							substr($product->image1,strpos($product->image1,'.')+1,strlen($product->image1)).'/'.
+							'45x45/'.
+							$slug):
+								base_url('img/noimage/45x45/'.$slug);
+					$gambar4=($product->image4 !== '')?
+						base_url('img/software/'.
+							substr($product->image1,0,strpos($product->image1,'.')).'/'.
+							substr($product->image1,strpos($product->image1,'.')+1,strlen($product->image1)).'/'.
+							'45x45/'.
+							$slug):
+								base_url('img/noimage/45x45/'.$slug);
+					
 				}
 				?>
 				<div class="row">
@@ -33,17 +68,17 @@
 						<div class="row" style="margin-top:80px">
 							<div class="col-md-2 col-sm-4 col-xs-4"></div>
 							<div class="col-md-7 col-sm-4 col-xs-5">
-								<?=img(['src'=>(substr($gambar1,0,4)=='http'?$gambar1:'assets/images/'.$gambar1),'width'=>'200px'])?>
+								<?=img(['src'=>$gambar_utama])?>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-3"></div>
 						</div>
 						<div class="row">
 							<div class="col-md-2 col-sm-4 col-xs-4"></div>
 							<div class="col-md-7 col-sm-4 col-xs-5" style="padding-right:0px;"><br>
-								<?=img(['src'=>(substr($gambar1,0,4)=='http'?$gambar1:'assets/images/'.$gambar1),'width'=>'40px','class'=>'img'])?>
-								<?=img(['src'=>(substr($gambar2,0,4)=='http'?$gambar2:'assets/images/'.$gambar2),'width'=>'40px','class'=>'img'])?>
-								<?=img(['src'=>(substr($gambar3,0,4)=='http'?$gambar3:'assets/images/'.$gambar3),'width'=>'40px','class'=>'img'])?>
-								<?=img(['src'=>(substr($gambar4,0,4)=='http'?$gambar4:'assets/images/'.$gambar4),'width'=>'40px','class'=>'img'])?>
+								<?=img(['src'=>$gambar1,'class'=>'img'])?>
+								<?=img(['src'=>$gambar2,'class'=>'img'])?>
+								<?=img(['src'=>$gambar3,'class'=>'img'])?>
+								<?=img(['src'=>$gambar4,'class'=>'img'])?>
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-3"></div>
 						</div>
