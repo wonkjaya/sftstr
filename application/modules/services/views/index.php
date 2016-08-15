@@ -30,7 +30,7 @@
 					  	$dotpos=strpos($image,'.');
 					  	$imageName=substr($image,0,$dotpos);
 					  	$type=substr($image,$dotpos+1,strlen($image));
-					  	$image=base_url('img/software/sm/'.$imageName.'/'.$type.'/'.$slug);
+					  	$image=base_url('img/software/'.$imageName.'/'.$type.'/159x179/'.$slug);
 					  }
 					  
 					  echo img([

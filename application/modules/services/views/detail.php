@@ -28,7 +28,7 @@
 						base_url('img/software/'.
 							substr($product->image1,0,strpos($product->image1,'.')).'/'.
 							substr($product->image1,strpos($product->image1,'.')+1,strlen($product->image1)).'/'.
-							'195x250'.
+							'195x250/'.
 							$slug):
 								base_url('img/noimage/md/195x250/'.$slug);
 					
