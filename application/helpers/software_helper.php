@@ -97,6 +97,7 @@ function ts_get_sidebar(){
 }
 
 function ts_get_footer(){
+	include('plugin/facebook.html');
 }
 
 function ts_get_user_level($level=10){
