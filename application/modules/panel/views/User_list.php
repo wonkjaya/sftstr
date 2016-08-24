@@ -5,21 +5,20 @@
 		  </div>
 		  <div class="panel-body">
 		  	<div class="col-md-12" style="margin-bottom:20px">
-				<form class="form-inline" method="GET">
-				  <div class="form-group">
-				    <label for="exampleInputName2"></label>
-				    <?php echo form_dropdown('type',['all'=>'All','1'=>'aktif','0'=>'nonaktif','2'=>'trash'],isset($_GET['type'])?$_GET['type']:'','class="form-control"');?>
-				  </div>
-				  <div class="form-group">
-				  	
-				  </div>
-				  <button type="submit" class="btn btn-default">Filter</button>
-				</form>		  		
+				<?php
+		  		$type=isset($_GET['t'])?$_GET['t']:'';
+		  	?>
+		  		<div class="btn-group">
+		  			<a href="?t=all" class="btn btn-<?=($type=='all' || $type=='')?'primary':'default';?>">All</a>
+		  			<a href="?t=aktif" class="btn btn-<?=($type=='aktif')?'primary':'default';?>">Aktif</a>
+		  			<a href="?t=nonaktif" class="btn btn-<?=($type=='nonaktif')?'primary':'default';?>">Non Aktif</a>
+		  			<a href="?t=trash" class="btn btn-<?=($type=='trash')?'primary':'default';?>">Trash</a>
+		  		</div>  		
 		  	</div>
 		    <table class="table table-bordered">
 		    	<tr>
 		    		<th>#</th>
-		    		<th>Tanggal</th>
+		    		<th>Dibuat</th>
 		    		<th>Email</th>
 		    		<th>Nama Lengkap</th>
 		    		<th>Nomor Telp</th>
@@ -33,7 +32,7 @@
 			    	<tr>
 			    		<td><?=$no?></td>
 			    		<td><?=$user->user_registered_date?></td>
-			    		<td><?=anchor(ADMIN_SOFTWARE.'/users?detail&id='.$user->ID,$user->user_email)?></td>
+			    		<td><?=anchor(ADMIN_SOFTWARE.'/users?detail&id='.$user->ID,$user->user_email,'class="btn-danger"')?></td>
 			    		<td><?=$user->nama_lengkap?></td>
 			    		<td><?=anchor(ADMIN_SOFTWARE.'/users?detail&id='.$user->ID,$user->nomor_telp)?></td>
 			    		<td style="text-align:right">

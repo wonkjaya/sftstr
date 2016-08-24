@@ -4,39 +4,55 @@
 		  <div class="pull-right"><?=anchor(ADMIN_SOFTWARE.'/products?addnew','Add New')?></div>
 		  </div>
 		  <div class="panel-body">
-		  	<div class="col-md-12" style="margin-bottom:20px">
-				<form class="form-inline" method="GET">
-				  <div class="form-group">
-				    <label for="exampleInputName2">Filter :</label>
-				    <?php 
-				    	if(isset($users)){
-				    		foreach($users as $user){
-				    			$user_list[$user->ID]=explode('@',$user->user_email)[0];
-				    		}
-				    	}
-				    	echo form_dropdown('user',$user_list,isset($_GET['user'])?$_GET['user']:'','class="form-control"');?>
-				  </div>
-				  <div class="form-group">
-				    <label for="exampleInputName2"></label>
-				    <?php echo form_dropdown('type',[''=>'type','1'=>'aktif','0'=>'trash'],isset($_GET['type'])?$_GET['type']:'','class="form-control"');?>
-				  </div>
-				  <div class="form-group">
-				    <?php 
-				    if(isset($cats)){//print_r($cats);
-				    	$kategori['']='kategori';
-				    	foreach($cats as $cat){
-				    		$slug=strtolower(str_replace(' ','-',$cat->name));
-				    		$kategori[$slug]=$cat->name;
-				    	}
-				    }
-				    echo form_dropdown('cat',$kategori,isset($_GET['cat'])?$_GET['cat']:'','class="form-control"');?>
-				  </div>
-				  <div class="form-group">
-				  	
-				  </div>
-				  <button type="submit" class="btn btn-default">Filter</button>
-				</form>		  		
+		  	<div class="col-md-6">
+		  	<?php
+		  		$type=isset($_GET['t'])?$_GET['t']:'';
+		  	?>
+		  		<div class="btn-group">
+		  			<a href="?t=all" class="btn btn-<?=($type=='all' || $type=='')?'primary':'default';?>">All</a>
+		  			<a href="?t=aktif" class="btn btn-<?=($type=='aktif')?'primary':'default';?>">Aktif</a>
+		  			<a href="?t=nonaktif" class="btn btn-<?=($type=='nonaktif')?'primary':'default';?>">Non Aktif</a>
+		  			<a href="?t=trash" class="btn btn-<?=($type=='trash')?'primary':'default';?>">Trash</a>
+		  		</div>
 		  	</div>
+		  	<script>
+				/*$('#myStateButton').on('click', function () {
+					$(this).button('complete') // button text will be "finished!"
+				})*/
+				</script>
+		  	<div class="col-md-6" style="margin-bottom:20px">
+					<form class="form-inline" method="GET">
+						<div class="form-group">
+						  <label for="exampleInputName2">Filter :</label>
+						  <?php 
+						  	if(isset($users)){
+						  		foreach($users as $user){
+						  			$user_list[$user->ID]=explode('@',$user->user_email)[0];
+						  		}
+						  	}
+						  	echo form_dropdown('user',$user_list,isset($_GET['user'])?$_GET['user']:'','class="form-control"');?>
+						</div>
+						<!--div class="form-group">
+						  <label for="exampleInputName2"></label>
+						  <?php echo form_dropdown('type',[''=>'type','1'=>'aktif','0'=>'trash'],isset($_GET['type'])?$_GET['type']:'','class="form-control"');?>
+						</div-->
+						<div class="form-group">
+						  <?php 
+						  if(isset($cats)){//print_r($cats);
+						  	$kategori['']='kategori';
+						  	foreach($cats as $cat){
+						  		$slug=strtolower(str_replace(' ','-',$cat->name));
+						  		$kategori[$slug]=$cat->name;
+						  	}
+						  }
+						  echo form_dropdown('cat',$kategori,isset($_GET['cat'])?$_GET['cat']:'','class="form-control"');?>
+						</div>
+						<div class="form-group">
+							
+						</div>
+						<button type="submit" class="btn btn-default">Filter</button>
+					</form>		  		
+		  	</div> <!--col-md-6-->
 		    <table class="table table-bordered">
 		    	<tr>
 		    		<th>#</th>

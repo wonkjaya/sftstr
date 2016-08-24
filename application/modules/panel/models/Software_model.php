@@ -27,8 +27,8 @@ class Software_model extends CI_Model {
 		if(isset($_GET['user'])){
 			if($_GET['user'] != '')$this->db->where('users.ID',$_GET['user']);
 		}
-		if(isset($_GET['type'])){
-			$status=($_GET['type']==0?0:1);
+		if(isset($_GET['t'])){
+			if($_GET['t'] !== 'all')	$status=($_GET['t']=='aktif'?1:($_GET['t']=='trash'?2:0));
 		}
 		if(isset($status))$this->db->where('produk_data.status',$status);
 		$this->db->select(['produk_data.ID','id_user','user_email','kode_produk','nama_produk','harga_jual','diskon','produk_kategori.name as kategori','produk_data.status']);
@@ -80,10 +80,9 @@ class Software_model extends CI_Model {
 	function get_user_list(){
 		$page=($this->uri->segment(2) > 0)?$this->uri->segment(2):0;
 		$this->db->limit(20,$page);
-		if(isset($_GET['type'])){
-			if(!empty($_GET['type']) and $_GET['type'] !== 'all'){
-				$type=$_GET['type'];
-			}
+		if(isset($_GET['t'])){
+				$type=$_GET['t'];
+				$type=($type=='aktif'?1:($type=='trash'?2:0));
 		}
 		
 		if(isset($type))$this->db->where('u.user_status',$type); // active
@@ -197,7 +196,7 @@ class Software_model extends CI_Model {
 			}else{
 				$url=$this->uri->uri_string().'?detail&id='.$id_user;
 			}
-			//redirect($url);
+			redirect($url);
 		}
 	}
 
@@ -317,7 +316,7 @@ class Software_model extends CI_Model {
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('image_profile')){
         	$data=$this->upload->data();
-        	print_r($data);
+        	//print_r($data);
         	return $data['file_name'];
         }else{
             $error = $this->upload->display_errors();

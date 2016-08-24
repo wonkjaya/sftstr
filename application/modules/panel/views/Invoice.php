@@ -1,6 +1,6 @@
 	<div class="col-md-6">
 		<div class="panel panel-default">
-		  <div class="panel-heading">Panel 1</div>
+		  <div class="panel-heading">Terbaru</div>
 		  <div class="panel-body">
 		    Panel content
 		  </div>
@@ -8,7 +8,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="panel panel-default">
-		  <div class="panel-heading">Panel 2</div>
+		  <div class="panel-heading">Chart</div>
 		  <div class="panel-body">
 		    Panel content
 		  </div>
@@ -16,7 +16,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="panel panel-default">
-		  <div class="panel-heading">Panel 3</div>
+		  <div class="panel-heading">Semua</div>
 		  <div class="panel-body">
 		    Panel content
 		  </div>

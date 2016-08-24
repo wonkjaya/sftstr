@@ -49,7 +49,7 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 ?>
 
 
-	<div class="col-md-10">
+	<div class="col-md-9">
 		<div class="panel panel-<?=$panel_class(isset($status)?$status:'')?>">
 		  <div class="panel-heading"><?=$title?></div>
 		  <div class="panel-body">
@@ -136,6 +136,19 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		    
 		   </form>
 		  </div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-heading">Catatan</div>
+			<div class="panel-body">
+				<ul class="ts-list-catatan">
+					<li><i>"Administrator" </i><span>Akses penuh sistem</span></li>
+					<li><i>"Marketing" </i><span>Membuat penawaran & mempunyai akses produk list</span></li>
+					<li><i>"Editor" </i><span>Memperbaiki deskripsi produk</span></li>
+					<li><i>"User" </i><span>Menginput produk dan mempunyai akses penuh produk sendiri</span></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

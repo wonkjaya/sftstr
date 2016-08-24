@@ -109,7 +109,7 @@ function form_gender($val){
 }
 
 function form_level($val){
-	$data=array('00'=>'Administrator','01'=>'Developer','03'=>'Staf Editor','10'=>'User');
+	$data=array('00'=>'Administrator','01'=>'Marketing','03'=>'Editor','10'=>'User');
 	return form_dropdown('level',$data,$val,'class="form-control"');
 }
 

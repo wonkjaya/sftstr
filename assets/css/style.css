@@ -83,3 +83,6 @@
 .ts-help{
 	font-size: 11px;
 }
+.ts-list-catatan li i{
+	color: red;
+}
