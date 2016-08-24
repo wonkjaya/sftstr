@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // aktifkan untuk melihat profiler
-if($_SERVER['HTTP_HOST']!='server00.cc'){
+if($_SERVER['HTTP_HOST'] == 'server00.cc'){
 	$dev=TRUE;
 }else{
 	$dev=FALSE;
@@ -26,7 +26,7 @@ if($_SERVER['HTTP_HOST']!='server00.cc'){
 define('DEVELOPMENT',$dev);
 
 
-$config['base_url'] = '';
+$config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['HTTP_HOST']}/";
 
 /*
 |--------------------------------------------------------------------------

@@ -74,13 +74,13 @@
 						</div>
 						<div class="row">
 							<div class="col-md-2 col-sm-4 col-xs-4"></div>
-							<div class="col-md-7 col-sm-4 col-xs-5" style="padding-right:0px;"><br>
+							<div class="col-md-8 col-sm-4 col-xs-5 offset-3" style="padding-right:0px;"><br>
 								<?=img(['src'=>$gambar1,'class'=>'img'])?>
 								<?=img(['src'=>$gambar2,'class'=>'img'])?>
 								<?=img(['src'=>$gambar3,'class'=>'img'])?>
 								<?=img(['src'=>$gambar4,'class'=>'img'])?>
 							</div>
-							<div class="col-md-3 col-sm-4 col-xs-3"></div>
+							<!--div class="col-md-3 col-sm-4 col-xs-3"></div-->
 						</div>
 						<hr/>
 						<div class="row">
