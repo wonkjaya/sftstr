@@ -65,7 +65,7 @@ $query_builder = TRUE;
 if($_SERVER['HTTP_HOST'] == 'server00.cc'){
 	$username='root';
 	$password='iTAYWGnJ';
-	$dbs='softwarestore';
+	$dbs='rohmanah_AdMTrsi';
 }else{
 	$username='rohmanah_rwiWP1';
 	$password='7@)90G9SP9';

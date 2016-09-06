@@ -431,10 +431,11 @@ class timthumb {
 			$html .= '<li>' . htmlentities($err) . '</li>';
 		}
 		$html .= '</ul>';
+		echo $this->src;
 		echo '<h1>404 NOT FOUND</h1>';
-		/*echo 'The following error(s) occured:<br />' . $html . '<br />';
+		echo 'The following error(s) occured:<br />' . $html . '<br />';
 		echo '<br />Query String : ' . htmlentities( $_SERVER['QUERY_STRING'], ENT_QUOTES );
-		echo '<br />TimThumb version : ' . VERSION . '</pre>';*/
+		//echo '<br />TimThumb version : ' . VERSION . '</pre>';
 	}
 	protected function serveInternalImage(){
 		$this->debug(3, "Local image path is $this->localImage");
@@ -987,6 +988,7 @@ class timthumb {
 		}
 	}
 	protected function serveExternalImage(){
+
 		if(! preg_match('/^https?:\/\/[a-zA-Z0-9\-\.]+/i', $this->src)){
 			$this->error("Invalid URL supplied.");
 			return false;
