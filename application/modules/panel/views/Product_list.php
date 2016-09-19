@@ -82,6 +82,7 @@
 			    			if($product->status == 1){
 			    				echo '<a href="#" class="btn btn-warning btn-xs" title="Trash" onclick="trash_product('.$product->ID.')"> <span class="glyphicon glyphicon-trash"></span> Trash</a>';
 			    			}else{
+			    				echo ' <a href="'.site_url(ADMIN_SOFTWARE.'/products?activate&id='.$product->ID).'" class="btn btn-primary btn-xs" title="Delete"> <span class="glyphicon glyphicon-floppy-saved"></span> Aktifkan</a> ';
 			    				echo '<a href="'.site_url(ADMIN_SOFTWARE.'/products?delete&id='.$product->ID).'" class="btn btn-danger btn-xs" title="Delete"> <span class="glyphicon glyphicon-trash"></span> Delete</a>';
 			    			}
 			    			?>

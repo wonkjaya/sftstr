@@ -49,6 +49,8 @@ class Software extends CI_Controller {
 			$this->model->trash_product($single=true);
 		}elseif(isset($_GET['delete'])){
 			$this->model->delete_product();
+		}elseif(isset($_GET['activate'])){
+			$this->model->activate_product();
 		}else{
 			$data['data_content']='Product_list';
 			$data['data']=array(

@@ -46,11 +46,13 @@
 								'class'	=> 'btn btn-primary col-md-6',
 								'role'	=> 'button'
 							])?>
-							<?=anchor(SOFTWARE_URL.'/add_to_cart/' . $product->ID, 'Beli' , [
+							<?=anchor('#', 'Beli' , [
 								'class'	=> 'btn btn-warning right col-md-5',
 								'style' => 'margin-left:3px',
-								'role'	=> 'button'
-							])?>
+								'role'	=> 'button',
+								'data-toggle'=>"modal",
+								'data-target'=>"#callme"
+							]);//SOFTWARE_URL.'/add_to_cart/' . $product->ID?>
 						</p>
 					  </div>
 					</div>
@@ -65,6 +67,7 @@
 			</div>
 		</div>
 			<?php $this->load->view('includes/footer') ?>
+			<?php $this->load->view('includes/callme') ?>
 		
 	</body>
 </html>

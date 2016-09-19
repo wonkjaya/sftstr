@@ -23,6 +23,18 @@ class Software extends CI_Controller {
 		$this->load->view('detail',$data);
 	}
 	
+	function download($filename=''){
+	    $this->load->helper('download');
+	    $file=FCPATH.'uploads/software/file-software/'.$filename.'.zip';
+	    if(file_exists($file)){
+           $filedownload=base_url('uploads/software/file-software/'.$filename.'.zip');
+	       redirect($filedownload);
+	    }else{
+	        exit('File Tidak Ada');
+	    }
+	    
+	}
+	
 	/*public function add_to_cart($product_id)
 	{
 		$product = $this->model->find($product_id);

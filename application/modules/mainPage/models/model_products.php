@@ -4,6 +4,7 @@ class Model_products extends CI_Model {
 
 	public function all(){
 		//query semua record di table products
+		$this->db->where('status',1);
 		$hasil = $this->db->get('products');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();

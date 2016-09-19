@@ -327,7 +327,7 @@ class Software_model extends CI_Model {
 	function upload_file_software($filename=''){ // UPLOAD FILE SOFTWARE
       unset($config);
     	$username=$this->session->userdata('username');
-			$config['upload_path']          = FCPATH.'/uploads/software/file-software/';
+		$config['upload_path']          = FCPATH.'/uploads/software/file-software/';
     	$config['file_name']			= (!empty($filename)?$filename:'software-'.time());
         $config['allowed_types']        = 'zip|rar|tar.gz';
         $config['overwrite']			= true;
@@ -351,7 +351,7 @@ class Software_model extends CI_Model {
         unset($config);
         $config=array();
         //echo '# upload_gambar'.br();
-				$config['upload_path']          = FCPATH.'/uploads/software/file-images/';
+		$config['upload_path']          = FCPATH.'/uploads/software/file-images/';
         $config['allowed_types']        = 'jpg|png|jpeg';
         $config['max_size']             = 100; ///100kB
         $config['max_width']            = 1024; //1024px
@@ -380,12 +380,12 @@ class Software_model extends CI_Model {
 		        	array_push($files, $data['file_name']);
 		        }
 		    else:
-		        array_push($files, '');
+		        array_push($files, isset($images[$image])?$images[$image]:'');
 
 		    endif;
 		    $i++;
         }
-        print_r($files);//exit;
+        //print_r($files);//exit;
         $config=null;
         return $files;
 	}
@@ -426,7 +426,16 @@ class Software_model extends CI_Model {
 			//print_r($_FILES);
 			$id_produk=$this->session->flashdata('id_produk');
 			if(!empty($id_produk)){
-				$this->db->select(['pdt.ID','url_demo','manual_book','image1','image2','image3','image4','image5']);
+				$this->db->select([
+				    'pdt.ID',
+				    'url_demo',
+				    'manual_book',
+				    'image1',
+				    'image2',
+				    'image3',
+				    'image4',
+				    'image5'
+				]);
 				$this->db->join('produk_deskripsi pd','pd.id_produk=pdt.ID');
 				$this->db->join('produk_gambar pg','pg.id_produk=pdt.ID');
 				$this->db->where('pdt.ID',$id_produk);
@@ -472,12 +481,18 @@ class Software_model extends CI_Model {
 			$meta['keywords']=$this->input->post('meta')['keywords'];
 			$meta['description']=$this->input->post('meta')['description'];
 			// upload files
-			$produk['url_demo']=$this->upload_file_software($url_demo);
+			if($_FILES['file_software']['tmp_name'] != ''){
+			    $produk['url_demo']=$this->upload_file_software($url_demo);
+			}
+			
 			// insert new deskripsi
-			$deskripsi['manual_book']=$this->upload_manual_book($manual_book);
+			if($_FILES['buku_panduan']['tmp_name'] != ''){
+			    $deskripsi['manual_book']=$this->upload_manual_book($manual_book);
+			}			
 			// meta
 			// insert images
 			$gambar['images']=$this->upload_gambar($images); 
+			//print_r($gambar);exit;
 			$this->update_all($id_produk,$produk,$deskripsi,$gambar,$meta);
 		}
 	}
@@ -542,7 +557,12 @@ class Software_model extends CI_Model {
 	function pilih_user_terbaru($limit){
 		$this->db->limit($limit);
 		$this->db->order_by('user_registered_date DESC');
-		$this->db->select(['u.ID','u.user_email as email','if(u.user_level = "00","Admin",if(u.user_level = "01","Developer",if(u.user_level = "03","Editor","User"))) as level','u.user_registered_date as created','u.user_status as status']);
+		$this->db->select([
+		'u.ID',
+		'u.user_email as email',
+		'if(u.user_level = "00","Admin",if(u.user_level = "01","Developer",if(u.user_level = "03","Editor","User"))) as level',
+		'u.user_registered_date as created',
+		'u.user_status as status']);
 		$q=$this->db->get('users u');
 		if($q->num_rows() > 0) return $q->result();
 	}
@@ -553,6 +573,14 @@ class Software_model extends CI_Model {
 		$this->db->select(['p.ID','p.kode_produk as kode','p.nama_produk as nama','p.created']);
 		$q=$this->db->get('produk_data p');
 		if($q->num_rows() > 0) return $q->result();
+	}
+	
+	function activate_product(){
+	    if(isset($_GET['id'])){
+	        $this->db->where('ID',$_GET['id']);
+	        $this->db->update('produk_data',['status'=>'1']);
+	    }
+	    redirect('panel/software/products?aktif');
 	}
 
 }

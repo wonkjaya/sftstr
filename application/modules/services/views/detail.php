@@ -14,6 +14,7 @@
 			<div class="col-sm-12 col-md-9">
 				<?php 
 				if($product){
+				//print_r($product);
 					$ID=$product->ID;
 					$kategori_produk=(isset($product->kategori))?$product->kategori:'Tidak Ada Kategori';
 					$kode_produk=$product->kode_produk;
@@ -21,7 +22,7 @@
 					$harga_jual=$product->harga_jual;
 					$diskon=$product->diskon;
 					$deskripsi=$product->deskripsi;
-					$demo=(isset($product->url_demo))?$product->url_demo:'';
+					$demo=(isset($product->url_demo))?site_url('services/software/download/'.str_replace('.zip','',$product->url_demo)):'';
 					$slug=$product->nama_slug.'-jpg';
 					
 					$gambar_utama=($product->image1 !== '')?
@@ -117,7 +118,7 @@
 							</div>
 							<div class="col-md-6 col-xs-6 col-sm-6">
 								<!--p>Diskon Bulan Ini: <span style="color:red;font-size:25px"> 20%</span></p-->
-								<p>Diskon Khusus Member: <span style="color:red;font-size:25px"> 25%</span></p>
+								<p>Diskon:<span style="color:red;font-size:25px"><?=$diskon?>%</span>, Khusus Member: <span style="color:red;font-size:25px"> 10%</span></p>
 							</div>
 							<div class="col-md-12">
 								<a href="" class="btn btn-share btn-primary col-md-2 col-sm-1 col-xs-2" style="float:right">Daftar</a>

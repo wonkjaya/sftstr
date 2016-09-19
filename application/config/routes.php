@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'mainPage';
 
-$route['logout'] = 'panel/admin/logout';
+$route['logout'] = 'panel/software/logout';
 
 // main controller
 
