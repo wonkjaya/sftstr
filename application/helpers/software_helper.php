@@ -33,7 +33,7 @@ function ts_get_header($options=array()){
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <a class="navbar-brand" href="'.site_url().'">Toko Software</a>
+			      <a class="navbar-brand" href="'.site_url('services/software').'">Toko Software</a>
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
