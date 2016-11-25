@@ -23,7 +23,7 @@ function ts_get_header($options=array()){
 		return '';
 	};
 	//echo $menu_aktif($options,5);exit;
-	return '<nav class="navbar navbar-default">
+	return '<nav class="navbar navbar-default navbar-fixed-top">
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">

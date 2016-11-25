@@ -18,15 +18,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // aktifkan untuk melihat profiler
-if($_SERVER['HTTP_HOST'] == 'server00.cc'){
-	$dev=TRUE;
+if($_SERVER['HTTP_HOST'] == 'docker.cc'){
+	$dev=FALSE;
 }else{
 	$dev=FALSE;
 }
 define('DEVELOPMENT',$dev);
 
 
-$config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['HTTP_HOST']}/";
+$config['base_url'] = "";
+// $config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['HTTP_HOST']}/";
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ $config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
