@@ -21,28 +21,29 @@ class Products extends CI_Controller {
 	products API
 	method : GET
 */
-	function getCountProducts($where=null){
-		$data = $this->m->getCountProducts($where); /* return json data*/
+
+	function getProductCount(){
+		$data = $this->m->getProductCount(); /* return json data*/
 		$this->printData($data);
 	}
 
-	function getAllProducts($limit=null, $start=null){
-		$data = $this->m->getAllProducts($limit, $start);
+	function getAllProducts(){
+		$data = $this->m->getAllProducts();
 		$this->printData($data);
 	}
 
-	function getActiveProducts($limit=null, $start=null){
-		$data = $this->m->getActiveProducts($limit, $start);
+	function getActiveProducts(){
+		$data = $this->m->getActiveProducts();
 		$this->printData($data);		
 	}
 
-	function getInActiveProducts($limit=null, $start=null){
-		$data = $this->m->getInActiveProducts($limit, $start);
+	function getInActiveProducts(){
+		$data = $this->m->getInActiveProducts();
 		$this->printData($data);
 	}
 
-	function getCategories($limit=null, $start=null){
-		$data = $this->m->getCategories($limit, $start);
+	function getCategories(){
+		$data = $this->m->getCategories();
 		$this->printData($data);
 	}
 

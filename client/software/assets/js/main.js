@@ -63,7 +63,7 @@ jQuery(document).ready(function($){
     });    
     
     
-    // Bootstrap Mobile Menu fix
+    /*// Bootstrap Mobile Menu fix
     $(".navbar-nav li a").click(function(){
         $(".navbar-collapse").removeClass('in');
     });    
@@ -83,6 +83,6 @@ jQuery(document).ready(function($){
     $('body').scrollspy({ 
         target: '.navbar-collapse',
         offset: 95
-    })      
+    })  */    
 });
 
