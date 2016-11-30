@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 //print_r($_SERVER['HTTP_HOST']);
-if($_SERVER['HTTP_HOST'] == 'docker.cc'){
+if(strpos($_SERVER['HTTP_HOST'],'docker') >= 0){
 	$username='root';
 	$password='';
 	$dbs='msoftware';
