@@ -1,0 +1,54 @@
+<div class="maincontent-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="latest-product">
+                    <h2 class="section-title">Software In Progress</h2>
+                    <!-- <div class="product-carousel"> -->
+                        <div class="row">
+                            <div class="single-product col-md-3 col-xs-4" 
+                                 style="margin-bottom: 20px" 
+                                 ng-repeat="i in [1,2,3,4]">
+                                <div class="product-f-image text-center">
+                                    <img src="assets/img/example.png" alt="">
+                                    <div class="product-hover hidden-xs">
+                                        <a href="#" class="add-to-cart-link">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped active" 
+                                                     style="width: {{20*i}}%">
+                                                    <center>In Progress</center>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#/product/{{i}}" class="view-details-link">
+                                            <i class="fa fa-link"></i> 
+                                            <span class="hidden-xs">See details</span>
+                                        </a>
+                                    </div>
+                                    <div class="product-hover visible-xs">
+                                        <a class="add-to-cart-link xs">
+                                            <i class="fa fa-spinner"></i> 
+                                        </a>
+                                        <a class="add-to-cart-link xs view" 
+                                            style="margin-right:40px">
+                                            <i class="fa fa-link"></i> 
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <h2><a href="single-product.html">Software Example {{$index+1}}</a></h2>
+                                
+                                <div class="product-carousel-price">
+                                    <ins>${{i}}00.00</ins> <del>${{i+1}}00.00</del>
+                                </div> 
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        
+
+        </div>
+    </div>
+</div> <!-- End main content area -->

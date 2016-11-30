@@ -5,7 +5,7 @@
 	<img src="<?=base_url((!isset($right))?'assets/images/cs.jpg':'assets/images/cs_right.png')?>" class="img-circle ts-image-cs" width="100px">
 	<p class="ts-titletag">
 		<b>MalangSoftware</b><br/>
-		<span>Toko software terlengkap dan terbaik di indonesia</span>
+		<span>Toko software Paling Lengkap <br/>Di Indonesia</span>
 	</p>
 </div>
 <div class="col-xs-12 col-md-12 col-sm-5" id="ts-sidebar-3">

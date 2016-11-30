@@ -1,2 +1,4 @@
-uploads/cache
-system
+index.php
+system/
+uploads/
+uploads/cache/*

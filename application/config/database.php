@@ -62,10 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 //print_r($_SERVER['HTTP_HOST']);
-if($_SERVER['HTTP_HOST'] == 'server00.cc'){
+if($_SERVER['HTTP_HOST'] == 'docker.cc'){
 	$username='root';
-	$password='iTAYWGnJ';
-	$dbs='rohmanah_AdMTrsi';
+	$password='';
+	$dbs='msoftware';
 }else{
 	$username='rohmanah_rwiWP1';
 	$password='7@)90G9SP9';

@@ -5,16 +5,16 @@
 		ts_get_head(); 
 	?>
 </head>
-<body>
+<body class="container">
 	<?php 
 		$data['aktif_menu']=$aktif_menu;
 		echo ts_get_header($data);
 	?>
-<div  class="container-fluid">
+<div  class="container-fluid" style="margin:50px 0px">
 	<div class="row">
 		<!--div class="col-md-2 col-sm-4">
 			<?//=ts_get_sidebar()?>
-		</div> <!--Sidebar-->
+		</div> Sidebar-->
 		<div class="col-md-12 col-sm-12">
 			<?php 
 				$this->load->view($data_content,$data);

@@ -56,5 +56,5 @@ $route['logout'] = 'panel/software/logout';
 
 // main controller
 
-$route['404_override'] = '';
+$route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = FALSE;
