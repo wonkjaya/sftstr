@@ -8,20 +8,36 @@ class Model_products extends CI_Model {
 
 	function getQuery(){
 		if($_GET){
-			$where = (object) json_decode(urldecode($_GET['where']));
 			if($_GET['limit']){
 				$this->db->limit(abs($_GET['limit']));
 			}
 			if(isset($where)){
+				$where = (object) json_decode(urldecode($_GET['where']));
 				foreach($where as $key=>$val){
-					if($key == 'id') $key = "produk_data.ID";
+					if($key == 'id') $key = "ID";
 					$this->db->where($key,$val);
 				}
 			}
 		}
 	}
 
-	function getCountProducts(){
+	function getAllProducts(){
+		$this->getQuery();
+		$this->db->join('produk_gambar','produk_gambar.id_produk = produk_data.ID','right');
+		$query = $this->db->get('produk_data');
+		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
+	}
+
+	function getLatestProducts(){
+		$this->getQuery();
+		$this->db->order_by("p.ID", "DESC");
+		$this->db->select(['p.*','pg.image1','pg.image2','pg.image3','pg.image4','pg.image5']);
+		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
+		$query = $this->db->get('produk_data p');
+		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
+	}
+
+	/*function getCountProducts(){
 		$this->db->select('count("ID") as total');
 		if($where){
 			if(is_array($where)){
@@ -30,17 +46,6 @@ class Model_products extends CI_Model {
 		}
 		$total = $this->db->get('produk_data')->row()->total;
 		return json_encode(['total'=>$total]);
-	}
-
-	function getAllProducts(){
-		$this->getQuery();
-		$this->db->join('produk_gambar','produk_gambar.id_produk = produk_data.ID','right');
-		$query = $this->db->get('produk_data');
-		try{
-		}catch(Exception $e){
-			print_r($e);
-		}
-		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
 	}
 
 	function getActiveProducts(){
@@ -63,5 +68,5 @@ class Model_products extends CI_Model {
 		}
 		$query = $this->db->get('produk_kategori');
 		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
-	}
+	}*/
 }

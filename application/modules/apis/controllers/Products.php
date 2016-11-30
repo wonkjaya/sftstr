@@ -22,16 +22,22 @@ class Products extends CI_Controller {
 	method : GET
 */
 
-	function getProductCount(){
-		$data = $this->m->getProductCount(); /* return json data*/
-		$this->printData($data);
-	}
 
 	function getAllProducts(){
 		$data = $this->m->getAllProducts();
 		$this->printData($data);
 	}
 
+	function getLatestProducts(){
+		$data = $this->m->getLatestProducts();
+		$this->printData($data);
+	}
+
+	/*function getProductCount(){
+		$data = $this->m->getProductCount(); // return json data
+		$this->printData($data);
+	}
+	
 	function getActiveProducts(){
 		$data = $this->m->getActiveProducts();
 		$this->printData($data);		
@@ -45,6 +51,6 @@ class Products extends CI_Controller {
 	function getCategories(){
 		$data = $this->m->getCategories();
 		$this->printData($data);
-	}
+	}*/
 
 }

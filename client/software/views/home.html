@@ -40,34 +40,35 @@
                     <div class="product-carousel">
                         <div class="row">
                             <div class="single-product col-md-3 col-xs-4" 
-                                 ng-repeat="i in [1,2,3,4]">
+                                 style="margin-bottom: 20px" 
+                                 ng-repeat="i in products">
                                 <div class="product-f-image text-center">
                                     <img src="assets/img/example.png" alt="">
-                                    <div class="product-hover hidden-xs">
-                                        <a href="#" class="add-to-cart-link">
+                                    <div class="product-hover hidden-xs" ng-init="namaProduk = i.nama_produk">
+                                        <a href="#/product/{{i.ID}}/cart/{{i.slug}}.html" class="add-to-cart-link">
                                             <i class="fa fa-shopping-cart"></i> 
                                             <span class="hidden-xs">Add to cart</span>
                                         </a>
-                                        <a href="#/product/{{i}}" class="view-details-link">
+                                        <a href="#/product/{{i.ID}}/{{i.slug}}.html" class="view-details-link">
                                             <i class="fa fa-link"></i> 
                                             <span class="hidden-xs">See details</span>
                                         </a>
                                     </div>
                                     <div class="product-hover visible-xs">
-                                        <a class="add-to-cart-link xs">
+                                        <a href="#/product/{{i.ID}}/cart/{{i.slug}}.html" class="add-to-cart-link xs">
                                             <i class="fa fa-shopping-cart"></i> 
                                         </a>
-                                        <a class="add-to-cart-link xs view" 
+                                        <a href="#/product/{{i.ID}}/{{i.slug}}.html" class="add-to-cart-link xs view" 
                                             style="margin-right:40px">
                                             <i class="fa fa-link"></i> 
                                         </a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Software Example {{$index+1}}</a></h2>
+                                <h2><a href="#/product/{{i}}">Software Example {{$index+1}}</a></h2>
                                 
                                 <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
+                                    <ins>${{i.harga_jual}}</ins> <del>{{i.harga_jual}}</del>
                                 </div> 
                             </div>
                         </div>
