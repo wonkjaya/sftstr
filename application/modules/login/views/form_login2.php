@@ -3,13 +3,13 @@
 <!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
 <link rel="stylesheet" type="text/css" href="<?=base_url('assets/css/bootstrap.min.css')?>">
 <style type="text/css">
-body{
+/* body{
     background: url("<?=base_url('assets/images/back.png')?>");
 	background-color: #444;
     background: url("<?=base_url('assets/images/pinlayer2.png')?>"),
     			url("<?=base_url('assets/images/pinlayer1.png')?>"),
     			url("<?=base_url('assets/images/back.png')?>");
-}
+} */
 
 .vertical-offset-100{
     padding-top:100px;

@@ -61,16 +61,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
-//print_r($_SERVER['HTTP_HOST']);
-if(strpos($_SERVER['HTTP_HOST'],'docker') >= 0){
-	$username='root';
-	$password='';
-	$dbs='msoftware';
-}else{
-	$username='rohmanah_rwiWP1';
-	$password='7@)90G9SP9';
-	$dbs='rohmanah_AdMTrsi';
-}
+$username='rohmanah_rwiWP1';
+$password='7@)90G9SP9';
+$dbs='rohmanah_AdMTrsi';
+
 //echo $_SERVER['HTTP_HOST'];
 $db['default'] = array(
 	'dsn'	=> '',

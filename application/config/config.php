@@ -17,14 +17,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-// aktifkan untuk melihat profiler
-if($_SERVER['HTTP_HOST'] == 'docker.cc'){
-	$dev=FALSE;
-}else{
-	$dev=FALSE;
-}
-define('DEVELOPMENT',$dev);
-
 
 $config['base_url'] = "";
 // $config['base_url'] = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['HTTP_HOST']}/";
