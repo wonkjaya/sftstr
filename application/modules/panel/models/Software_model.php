@@ -306,13 +306,14 @@ class Software_model extends CI_Model {
 				$file_name='profile-'.time();
 			}
 			$config=array();
-				$config['upload_path']		= FCPATH.'/uploads/profile_pic/';
-        $config['allowed_types']	= 'jpg|png|jpeg';
-        $config['max_size']				= 400; ///400kB
-        $config['max_width']			= 1024; //1024px
-        $config['max_height']     = 768; //768px
-        $config['file_name']			= $file_name;
-        $config['overwrite']			= true;
+			$config['upload_path']		= FCPATH.'/uploads/profile_pic/';
+	        $config['allowed_types']	= 'jpg|png|jpeg';
+	        $config['max_size']			= 400; ///400kB
+	        $config['max_width']		= 1024; //1024px
+	        $config['max_height']     	= 768; //768px
+	        $config['file_name']		= $file_name;
+	        $config['overwrite']		= true;
+
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('image_profile')){
         	$data=$this->upload->data();
@@ -374,6 +375,7 @@ class Software_model extends CI_Model {
 		        if ( ! $this->upload->do_upload($image)) // gambar berbentuk array
 		        {
 		            $error = array('error' => $this->upload->display_errors());
+		            print_r($error);
         			array_push($files, 'no-image.png');
 		        }else{
 		        	$data=$this->upload->data();
