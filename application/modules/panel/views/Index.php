@@ -15,6 +15,7 @@
 		<!--div class="col-md-2 col-sm-4">
 			<?//=ts_get_sidebar()?>
 		</div> Sidebar-->
+		<hr>
 		<div class="col-md-12 col-sm-12">
 			<?php 
 				$this->load->view($data_content,$data);
@@ -23,7 +24,7 @@
 	</div>
 </div>
 	<?php
-	$this->load->view('includes/footer');
+	//$this->load->view('includes/footer');
 	?>
 </body>
 </html>

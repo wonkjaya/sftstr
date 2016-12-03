@@ -61,9 +61,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
+/* default on server */
 $username='rohmanah_rwiWP1';
 $password='7@)90G9SP9';
 $dbs='rohmanah_AdMTrsi';
+if(DEVELOPMENT == true){
+	$username='root';
+	$password='';
+	$dbs='msoftware';
+}
 
 //echo $_SERVER['HTTP_HOST'];
 $db['default'] = array(

@@ -6,7 +6,7 @@ class Software extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(['Software','admin']);
 		$this->load->model('software_model','model');
-		ts_is_login();
+		ts_is_login(true);
 	}
 
 	function logout(){

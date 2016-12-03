@@ -2,11 +2,15 @@
 
 
 function ts_is_login($redirect=false){ // redirect = 'url'
-	if(ts_get_level() !== false){
-		$url=(ts_get_level() == '00')?'admin':'user';
+	if(ts_get_username() == false){
+		redirect('login');
 	}
-	if($redirect == true and isset($url))	redirect($url);
-	return ts_get_username();
+}
+
+function check_login(){
+	if(ts_get_username() != false){
+		redirect('panel/software');
+	}
 }
 
 function ts_get_level(){

@@ -1,7 +1,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
-		  <div class="panel-heading">Data Produk 
-		  <div class="pull-right"><?=anchor(ADMIN_SOFTWARE.'/products?addnew','Add New')?></div>
+		  <div class="panel-heading">
+		  	<h3 style="width:50%">Data Produk</h3> 
 		  </div>
 		  <div class="panel-body">
 		  	<div class="col-md-6">
@@ -55,13 +55,16 @@
 		  	</div> <!--col-md-6-->
 		    <table class="table table-bordered">
 		    	<tr>
-		    		<th>#</th>
-		    		<th>User</th>
-		    		<th>Kategori</th>
-		    		<th>Kode</th>
-		    		<th>Nama</th>
-		    		<th valign="left">Harga</th>
-		    		<th>*</th>
+		    		<th class="hidden-xs">#</th>
+		    		<th class="hidden-xs">User</th>
+		    		<th class="hidden-xs">Kategori</th>
+		    		<th class="hidden-xs">Kode</th>
+		    		<th class="hidden-xs">Nama</th>
+		    		<th valign="left" class="hidden-xs">Harga</th>
+		    		<th class="hidden-xs">
+		    			<?=anchor(ADMIN_SOFTWARE.'/products?addnew','Add New',
+		    				'class="btn btn-xs btn-primary pull-right"')?>
+		    		</th>
 		    	</tr>
 		    	<?php 
 		    	if(isset($products)){
@@ -69,21 +72,70 @@
 			    	foreach($products as $product){
 			    	?>
 			    	<tr>
-			    		<td><?=$no?></td>
-			    		<td><?=anchor(ADMIN_SOFTWARE.'/users?detail&id='.$product->id_user,explode('@',$product->user_email)[0])?></td>
-			    		<td><?=$product->kategori?></td>
-			    		<td><?=$product->kode_produk?></td>
-			    		<td><?=anchor(ADMIN_SOFTWARE.'/products?detail&id='.$product->ID,$product->nama_produk)?></td>
-			    		<td style="text-align:right;"><?=str_replace(',','.',number_format($product->harga_jual))?></td>
-			    		<td style="text-align:right">
-			    			<!--a href="" class="btn btn-default btn-xs" title=""> <span class="glyphicon glyphicon-eye-open"></span></a>
-			    			<a href="" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a-->
+			    		<td class="hidden-xs"><?=$no?></td>
+			    		<td class="hidden-xs">
+			    			<?=anchor(ADMIN_SOFTWARE.'/users?detail&id='.$product->id_user,
+			    				explode('@',$product->user_email)[0])?>
+			    		</td>
+			    		<td class="hidden-xs">
+			    			<?=$product->kategori?>
+			    		</td>
+			    		<td class="hidden-xs">
+			    			<?=$product->kode_produk?>
+			    		</td>
+			    		<td>
+			    			<div class="panel-default">
+							  <div class="panel-heading kode-produk show-xs hidden-md hidden-lg">
+							  	<i><?=$product->kode_produk?></i>
+							  	<i class="pull-right"><?=$product->kategori?></i>
+							  </div>
+							  <div class="panel-body">
+							    <?=anchor(ADMIN_SOFTWARE.'/products?detail&id='.$product->ID,$product->nama_produk)?>
+							  </div>
+							  <div class="panel-body kode-produk show-xs hidden-md hidden-lg">
+								  <div class="col-xs-6">
+								  	<i>publisher: admin</i>
+								  </div>
+								  <div class="col-xs-6">
+								  	<a href="" class="btn btn-default btn-xs" title=""> 
+					    				<i class="glyphicon glyphicon-eye-open"></i>
+					    				<span class="hidden-xs">Preview</span>
+					    			</a>
+					    			<a href="" class="btn btn-warning btn-xs"> 
+					    				<i class="glyphicon glyphicon-pencil"></i>
+					    				<span class="hidden-xs">Edit</span>
+					    			</a>
+					    			<?php
+					    			if($product->status == 1){
+					    				echo '<a href="#" class="btn btn-danger btn-xs" title="Trash" onclick="trash_product('.$product->ID.')" style="margin-top:2px"> <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Trash</span></a>';
+					    			}else{
+					    				echo ' <a href="'.site_url(ADMIN_SOFTWARE.'/products?activate&id='.$product->ID).'" class="btn btn-primary btn-xs" style="margin-top:2px" title="Aktifkan"> <i class="glyphicon glyphicon-floppy-saved"></i> <span class="hidden-xs">Aktifkan</span></a> ';
+					    				echo '<a href="'.site_url(ADMIN_SOFTWARE.'/products?delete&id='.$product->ID).'" style="margin-top:2px" class="btn btn-danger btn-xs" title="Delete"> <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Delete</span></a>';
+					    			}
+					    			?>
+								  </div>
+							  	
+							  </div>
+							</div>
+			    		</td>
+			    		<td style="text-align:right;" class="hidden-xs">
+			    			<?=str_replace(',','.',number_format($product->harga_jual))?>
+			    		</td>
+			    		<td style="text-align:right" class="hidden-xs">
+			    			<a href="" class="btn btn-default btn-xs" title=""> 
+			    				<i class="glyphicon glyphicon-eye-open"></i>
+			    				<span class="hidden-xs">Preview</span>
+			    			</a>
+			    			<a href="" class="btn btn-warning btn-xs"> 
+			    				<i class="glyphicon glyphicon-pencil"></i>
+			    				<span class="hidden-xs">Edit</span>
+			    			</a>
 			    			<?php
 			    			if($product->status == 1){
-			    				echo '<a href="#" class="btn btn-warning btn-xs" title="Trash" onclick="trash_product('.$product->ID.')"> <span class="glyphicon glyphicon-trash"></span> Trash</a>';
+			    				echo '<a href="#" class="btn btn-danger btn-xs" title="Trash" onclick="trash_product('.$product->ID.')" style="margin-top:2px"> <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Trash</span></a>';
 			    			}else{
-			    				echo ' <a href="'.site_url(ADMIN_SOFTWARE.'/products?activate&id='.$product->ID).'" class="btn btn-primary btn-xs" title="Delete"> <span class="glyphicon glyphicon-floppy-saved"></span> Aktifkan</a> ';
-			    				echo '<a href="'.site_url(ADMIN_SOFTWARE.'/products?delete&id='.$product->ID).'" class="btn btn-danger btn-xs" title="Delete"> <span class="glyphicon glyphicon-trash"></span> Delete</a>';
+			    				echo ' <a href="'.site_url(ADMIN_SOFTWARE.'/products?activate&id='.$product->ID).'" class="btn btn-primary btn-xs" style="margin-top:2px" title="Aktifkan"> <i class="glyphicon glyphicon-floppy-saved"></i> <span class="hidden-xs">Aktifkan</span></a> ';
+			    				echo '<a href="'.site_url(ADMIN_SOFTWARE.'/products?delete&id='.$product->ID).'" style="margin-top:2px" class="btn btn-danger btn-xs" title="Delete"> <i class="glyphicon glyphicon-trash"></i> <span class="hidden-xs">Delete</span></a>';
 			    			}
 			    			?>
 			    		</td>

@@ -69,39 +69,52 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 
 	<div class="col-md-12">
 		<div class="panel panel-<?=$panel_class(isset($status)?$status:'')?>">
-		  <div class="panel-heading"><?=$title?></div>
+		  <div class="panel-heading"><h3><?=$title?></h3></div>
 		  <div class="panel-body">
 		   <?php echo form_open_multipart($url); ?>
-		    <div class="col-md-12"><?=(isset($_SESSION['insert_success']))?'Produk Berhasil Di input.':''?></div>
-		    <div class="col-md-5">
+		    <div class="col-md-12">
+		    	<?=(isset($_SESSION['insert_success']))
+		    		?'<div class="alert alert-success">Produk Berhasil Di input.</div>':''?>
+		    </div>
+		    <div class="col-md-6">
 		    <?php echo validation_errors(); ?>
 		   		<table class="table">
 		   			<tr>
-		   				<th>Nama Produk</th>
+		   				<th id="no-border">Kode Produk</th>
+		   				<td id="no-border">
+		   					<div class="input-group">
+								<span class="input-group-addon" id="basic-addon2">MS-</span>
+								<?=form_input('kodePrd',$kodePrd,'class="form-control"')?>
+							</div>
+						</td>
+		   			</tr>
+		   			<tr>
+		   				<th id="no-border">Nama Produk</th>
 		   				<td id="no-border"><?=form_input('namaPrd',$namaPrd,'class="form-control"')?></td>
 		   			</tr>
 		   			<tr>
-		   				<th>Kode Produk</th>
-		   				<td id="no-border"><?=form_input('kodePrd',$kodePrd,'class="form-control"')?></td>
-		   			</tr>
-		   			<!--tr>
-		   				<th>Harga Beli</th>
-		   				<td id="no-border"><?=form_input('hargaBeli',$hargaBeli,'class="form-control"')?></td>
-		   			</tr-->
-		   			<tr>
-		   				<th>Harga</th>
-		   				<td id="no-border"><?=form_input('hargaJual',$hargaJual,'class="form-control"')?></td>
+		   				<th id="no-border">Harga</th>
+		   				<td id="no-border">
+		   				<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2">Rp. </span>
+							<?=form_input('hargaJual', $hargaJual, 'class="form-control"')?></td>
+						</div>
 		   			</tr>
 		   			<tr>
-		   				<th>Kategori</th>
+		   				<th id="no-border">Kategori</th>
 		   				<td id="no-border"><?=form_dropdown('kategori',$categories_array($categories),$kategori,'class="form-control"')?></td>
 		   			</tr>
 		   			<tr>
-		   				<th>Diskon</th>
-		   				<td id="no-border"><?=form_input('diskon',$diskon,'class="form-control"')?></td>
+		   				<th id="no-border">Diskon</th>
+		   				<td id="no-border">
+		   					<div class="input-group">
+		   						<?=form_input('diskon', $diskon, 'class="form-control" aria-describedby="basic-addon2"')?>
+							  <span class="input-group-addon" id="basic-addon2">%</span>
+							</div>
+		   				</td>
 		   			</tr>
 		   			<tr>
-		   				<th colspan=2>Gambar</th>
+		   				<th colspan=2 id="no-border">Gambar</th>
 		   			</tr>
 		   			<tr>
 		   				<td id="no-border" colspan="2">
@@ -144,16 +157,16 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   				</td>
 		   			</tr>
 		   			<tr>
-		   				<th>ManualBook</th>
-		   				<td>
+		   				<th id="no-border">ManualBook</th>
+		   				<td id="no-border">
 		   					<?= form_upload("buku_panduan",'','class="form-control" accept=".pdf"');?>
 		   					<span id="helpBlock" class="help-block ts-help">Only *.PDF or Compressed file</span>
 		   					<?=isset($manualbook)?'<p>Current File: '.$manualbook.'</p>':''?>
 		   				</td>
 		   			</tr>
 		   			<tr>
-		   				<th>File</th>
-		   				<td>
+		   				<th id="no-border">File</th>
+		   				<td id="no-border">
 		   					<input type="file" name="file_software" accept=".zip,.rar,.gz" class="form-control">
 		   					<span id="helpBlock" class="help-block ts-help">Only *.PDF or Compressed file</span>
 		   					<?=isset($file_software)?'<p>Current File: '.$file_software.'</p>':''?>
@@ -163,7 +176,7 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   			
 		   		</table>
 		    </div>
-		    <div class="col-md-7">
+		    <div class="col-md-6">
 		    	
    				<label>Deskripsi Produk</label>
    				<textarea id="deskripsi_prd" name="deskripsi_prd"><?=$deskripsi_prd?></textarea>

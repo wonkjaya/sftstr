@@ -28,6 +28,11 @@ class Products extends CI_Controller {
 		$this->printData($data);
 	}
 
+	function getProgressProducts(){
+		$data = $this->m->getProgressProducts();
+		$this->printData($data);
+	}
+
 	function getLatestProducts(){
 		$data = $this->m->getLatestProducts();
 		$this->printData($data);

@@ -228,7 +228,7 @@ class Software_model extends CI_Model {
 			}
 			//print_r($_FILES);
 			$produk['id_user']=$this->get_id_user();
-			$produk['kode_produk']=$this->input->post('kodePrd');
+			$produk['kode_produk']='MS-'.$this->input->post('kodePrd');
 			$produk['nama_produk']=$this->input->post('namaPrd');
 			$produk['slug']=str_replace(' ', '-', $produk['nama_produk'].'-'.$produk['kode_produk']);
 			$produk['id_kategori']=$this->input->post('kategori');
@@ -374,7 +374,7 @@ class Software_model extends CI_Model {
 		        if ( ! $this->upload->do_upload($image)) // gambar berbentuk array
 		        {
 		            $error = array('error' => $this->upload->display_errors());
-		            die($image .' : '.$error);
+        			array_push($files, 'no-image.png');
 		        }else{
 		        	$data=$this->upload->data();
 		        	array_push($files, $data['file_name']);

@@ -21,17 +21,30 @@ class Model_products extends CI_Model {
 		}
 	}
 
+	function getProgressProducts(){
+		$this->getQuery();
+		$this->db->where('p.status',2);
+		$this->db->select(['p.*','pg.image1']);
+		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
+		$query = $this->db->get('produk_data p');
+		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
+	}
+
 	function getAllProducts(){
 		$this->getQuery();
-		$this->db->join('produk_gambar','produk_gambar.id_produk = produk_data.ID','right');
-		$query = $this->db->get('produk_data');
+		$this->db->where('p.status',1);
+		$this->db->select(['p.*','pg.image1']);
+		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
+		$query = $this->db->get('produk_data p');
 		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
 	}
 
 	function getLatestProducts(){
 		$this->getQuery();
+		$this->db->where('p.status',1);
 		$this->db->order_by("p.ID", "DESC");
-		$this->db->select(['p.*','pg.image1','pg.image2','pg.image3','pg.image4','pg.image5']);
+		$this->db->select(['p.*','pg.image1']);
+		$this->db->select(['p.*','pg.image1']);
 		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
 		$query = $this->db->get('produk_data p');
 		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);

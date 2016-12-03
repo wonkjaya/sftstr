@@ -10,7 +10,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('admin');
-		ts_is_login(true); // check if login
+		check_login(); // check if login
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('email','Email','required');
 		$this->form_validation->set_rules('password','Password','required');
