@@ -55,7 +55,7 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		  <div class="panel-body">
 		   <?php echo form_open_multipart($url); ?>
 		    <div class="col-md-12"><?=(isset($_SESSION['insert_success']))?'Produk Berhasil Di input.':''?></div>
-		    <div class="col-md-5">
+		    <div class="col-md-7">
 		    <?php echo validation_errors(); ?>
 		   		<table class="table">
 		   			<tr>
@@ -90,11 +90,13 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   			</tr>
 	   			</table>
    			</div>
-   			<div class="col-md-7">
+   			<div class="col-md-5">
 	   			<table class="table">
 		   			<tr>
-		   				<th>Alamat</th>
-		   				<td id="no-border"><?=form_textarea('alamat',$alamat,'class="form-control" style="height:80px"')?></td>
+		   				<th colspan=2>Alamat</th>
+		   			</tr>
+		   			<tr>
+		   				<td id="no-border" colspan="2"><?=form_textarea('alamat',$alamat,'class="form-control" style="height:80px"')?></td>
 		   			</tr>
 		   			<tr>
 		   				<th colspan=2>Profile Picture</th>
@@ -123,18 +125,14 @@ $url=isset($url_action)?$url_action:$this->uri->uri_string().$target;
 		   					</script>
 		   				</td>
 		   			</tr>
-		   			<tr>
-		   				<td></td>
-		   				<td colspan="1" style="text-align:right">
-		   					<input type="button" class="btn btn-danger" value="Batal" onclick="history.back()" />
-		   					<input type="reset" class="btn btn-default" value="Reset" />
-		   					<input type="submit" class="btn btn-primary" value="<?=$button_submit_title?>" />
-		   				</td>
-		   			</tr>
 		   		</table>
-		    </div>
-		    
+		    </div><!-- col-md-5 -->
 		   </form>
+		  </div><!-- panel body -->
+		  <div class="panel panel-footer" style="text-align: right;">
+			  	<input type="button" class="btn btn-danger" value="Batal" onclick="history.back()" />
+				<input type="reset" class="btn btn-default" value="Reset" />
+				<input type="submit" class="btn btn-primary" value="<?=$button_submit_title?>" />
 		  </div>
 		</div>
 	</div>
