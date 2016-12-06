@@ -8,14 +8,22 @@ class Model_products extends CI_Model {
 
 	function getQuery(){
 		if($_GET){
-			if($_GET['limit']){
+			$primary = '';
+			if(isset($_GET['limit'])){
 				$this->db->limit(abs($_GET['limit']));
 			}
-			if(isset($where)){
+			if(isset($_GET['key'])){
+				$primary = $_GET['key'].'.';
+			}
+			if(isset($_GET['where'])){
 				$where = (object) json_decode(urldecode($_GET['where']));
 				foreach($where as $key=>$val){
-					if($key == 'id') $key = "ID";
-					$this->db->where($key,$val);
+					if($key == 'id') $key = $primary."ID";
+					if($key == 'excludeId'){
+						$key = $primary."ID"."!=";
+						$val = $val;
+					}
+						$this->db->where($key,$val);
 				}
 			}
 		}
@@ -29,10 +37,13 @@ class Model_products extends CI_Model {
 		$query = $this->db->get('produk_data p');
 		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
 	}
-
+/*
+	fungsi ini dipakai oleh 
+	- getActiveProducts()
+*/
 	function getAllProducts(){
 		$this->getQuery();
-		$this->db->where('p.status',1);
+		// $this->db->where('p.status',1);
 		$this->db->select(['p.*','pg.image1']);
 		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
 		$query = $this->db->get('produk_data p');
@@ -44,10 +55,27 @@ class Model_products extends CI_Model {
 		$this->db->where('p.status',1);
 		$this->db->order_by("p.ID", "DESC");
 		$this->db->select(['p.*','pg.image1']);
-		$this->db->select(['p.*','pg.image1']);
 		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
 		$query = $this->db->get('produk_data p');
 		return ($query->num_rows() > 0) ? json_encode(array("data"=>$query->result())) : json_encode(["data"=>null]);
+	}
+
+	function getProduct($id){
+		$this->db->limit(1);
+		$this->db->where(["p.ID"=>$id]);
+		$this->db->select(['p.*','pg.image1','pg.image2','pg.image3','pg.image4','pg.image5','pd.deskripsi_produk']);
+		$this->db->join('produk_gambar pg','pg.id_produk = p.ID','right');
+		$this->db->join('produk_deskripsi pd','pd.id_produk = p.ID','left');
+		$query = $this->db->get('produk_data p');
+		return ($query->num_rows() > 0) 
+				? json_encode(array("data"=>$query->result())) 
+				: json_encode(["data"=>null]);
+	}
+
+	function getActiveProducts(){
+		$this->db->where(['p.status'=>1]);
+		$query = $this->getAllProducts();
+		return $query;
 	}
 
 	/*function getCountProducts(){
@@ -61,11 +89,6 @@ class Model_products extends CI_Model {
 		return json_encode(['total'=>$total]);
 	}
 
-	function getActiveProducts(){
-		$this->db->where(['produk_data.status'=>1]);
-		$query = $this->getAllProducts(abs($limit), abs($start));
-		return $query;
-	}
 
 	function getInActiveProducts(){
 		$this->db->where(['produk_data.status'=>0]);

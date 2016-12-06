@@ -38,14 +38,19 @@ class Products extends CI_Controller {
 		$this->printData($data);
 	}
 
-	/*function getProductCount(){
-		$data = $this->m->getProductCount(); // return json data
+	function getProduct($id){
+		$data = $this->m->getProduct($id);
 		$this->printData($data);
 	}
 	
 	function getActiveProducts(){
 		$data = $this->m->getActiveProducts();
 		$this->printData($data);		
+	}
+
+	/*function getProductCount(){
+		$data = $this->m->getProductCount(); // return json data
+		$this->printData($data);
 	}
 
 	function getInActiveProducts(){
