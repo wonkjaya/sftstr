@@ -4,3 +4,4 @@ uploads/
 uploads/cache/*
 .htaccess
 .git/
+application/config/database.php
