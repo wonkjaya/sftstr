@@ -68,7 +68,7 @@ $dbs='rohmanah_AdMTrsi';
 if(DEVELOPMENT == true){
 	$username='root';
 	$password='';
-	$dbs='msoftware';
+	$dbs='mlg_software';
 }
 
 //echo $_SERVER['HTTP_HOST'];
