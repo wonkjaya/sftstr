@@ -1,7 +1,7 @@
 index.php
+environtment.php
 system/
 uploads/
 uploads/cache/*
 .htaccess
 .git/
-application/config/database.php
